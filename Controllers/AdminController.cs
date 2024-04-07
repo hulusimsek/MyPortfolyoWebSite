@@ -116,9 +116,22 @@ namespace MyPortfolyoWebSite.Controllers
             {
                 try
                 {
+                    // Veritabanındaki tüm becerileri çek
+                    var existingSkills = _context.Skills.ToList();
+
+                    // Formda olmayan becerileri sil
+                    foreach (var existingSkill in existingSkills)
+                    {
+                        if (!skills.Any(s => s.SkillId == existingSkill.SkillId))
+                        {
+                            _context.Skills.Remove(existingSkill);
+                        }
+                    }
+
+                    // Formdan gelen her beceri için kontrol yap
                     foreach (var skill in skills)
                     {
-                        var existingSkill = _context.Skills.FirstOrDefault(s => s.SkillId == skill.SkillId);
+                        var existingSkill = existingSkills.FirstOrDefault(s => s.SkillId == skill.SkillId);
                         if (existingSkill != null)
                         {
                             // Eğer beceri veritabanında varsa güncelle
@@ -131,7 +144,10 @@ namespace MyPortfolyoWebSite.Controllers
                             _context.Skills.Add(skill);
                         }
                     }
+
+                    // Değişiklikleri kaydet
                     await _context.SaveChangesAsync();
+
                     return RedirectToAction("Index");
 
                 }
@@ -148,6 +164,8 @@ namespace MyPortfolyoWebSite.Controllers
                 return View("Error");
             }
         }
+
+
 
 
 

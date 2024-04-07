@@ -13,17 +13,19 @@ public class HomeController : Controller
         _context = context;
     }
     public async Task<IActionResult> Index()
+    {
+        var aboutMe = await _context.AboutMe.FirstOrDefaultAsync();
+        var skills = await _context.Skills.ToListAsync();
+        if (aboutMe == null)
         {
-            var aboutMe = await _context.AboutMe.FirstOrDefaultAsync();
-            if (aboutMe == null)
-            {
-                return View();
-            }
-
-            ViewBag.AboutMe = aboutMe;
-
-            // Diğer modeli de ViewBag'e ekle
-
             return View();
         }
+
+        ViewBag.AboutMe = aboutMe;
+        ViewBag.Skills = skills;
+
+        // Diğer modeli de ViewBag'e ekle
+
+        return View();
+    }
 }

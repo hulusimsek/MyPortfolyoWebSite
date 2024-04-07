@@ -123,49 +123,81 @@
         </div>
         <!-- Large Button End -->
 
-        @if (ViewBag.AboutMe != null)
-{
-    <div class="about" id="about">
-        <div class="content-inner">
+        @if (ViewBag.AboutMe != null) {
+        <div class="about" id="about">
+          <div class="content-inner">
             <div class="content-header">
-                <h2>About Me</h2>
+              <h2>About Me</h2>
             </div>
             <div class="row align-items-center">
-                <div class="col-md-6 col-lg-5">
-                    <img src="@ViewBag.AboutMe.ProfilePicturePath" alt="Profile Picture" />
-                </div>
-                <div class="col-md-6 col-lg-7">
-                    <p>@ViewBag.AboutMe.Description</p>
-                    <div class="skills">
-                        @if (ViewBag.Skills != null && ViewBag.Skills.Any())
-                        {
-                            @foreach (var skill in ViewBag.Skills)
-                            {
-                                <div class="skill-name">
-                                    <p>@skill.Name</p>
-                                    <p>@skill.Value%</p>
-                                </div>
-                                <div class="progress">
-                                    @{ var progressBarWidth = skill.Value.ToString("0.##"); }
-                                    <div class="progress-bar" role="progressbar" style="width: @progressBarWidth%" aria-valuenow="@skill.Value" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            }
-                        }
-                        else
-                        {
-                            <p>No skills found.</p>
-                        }
+              <div class="col-md-6 col-lg-5">
+                <img
+                  src="@ViewBag.AboutMe.ProfilePicturePath"
+                  alt="Profile Picture"
+                />
+              </div>
+              <div class="col-md-6 col-lg-7">
+                <p>@ViewBag.AboutMe.Description</p>
+                <a class="btn" href="#">Hire Me</a>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="skills">
+                    @if (ViewBag.Skills != null && ViewBag.Skills.Count > 0) {
+                    var halfCount = (int)Math.Ceiling(ViewBag.Skills.Count /
+                    2.0); var count = 0; foreach (var skill in ViewBag.Skills) {
+                    if (count >= halfCount) { break; }
+                    <div class="skill-name">
+                      <p>@skill.Name</p>
+                      <p>@skill.Value%</p>
                     </div>
-                    <a class="btn" href="#">Hire Me</a>
+                    <div class="progress">
+                      <div
+                        class="progress-bar"
+                        role="progressbar"
+                        style="width: @skill.Value%"
+                        aria-valuenow="@skill.Value"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      ></div>
+                    </div>
+                    count++; } } else {
+                    <p>No skills found.</p>
+                    }
+                  </div>
                 </div>
+                <div class="col-md-6">
+                  <div class="skills">
+                    @if (ViewBag.Skills != null && ViewBag.Skills.Count > 0) {
+                    var halfCount = (int)Math.Ceiling(ViewBag.Skills.Count /
+                    2.0); var count = 0; foreach (var skill in ViewBag.Skills) {
+                    if (count < halfCount) { count++; continue; }
+                    <div class="skill-name">
+                      <p>@skill.Name</p>
+                      <p>@skill.Value%</p>
+                    </div>
+                    <div class="progress">
+                      <div
+                        class="progress-bar"
+                        role="progressbar"
+                        style="width: @skill.Value%"
+                        aria-valuenow="@skill.Value"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      ></div>
+                    </div>
+                    } } else {
+                    <p>No skills found.</p>
+                    }
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-}
-else
-{
-    <p>About Me information not found.</p>
-}
+        } else {
+        <p>About Me information not found.</p>
+        }
         <script>
           // JavaScript kullanarak progress bar'ı güncelle
           var progressBars = document.querySelectorAll(".progress-bar");
