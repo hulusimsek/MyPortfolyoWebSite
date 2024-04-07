@@ -1,0 +1,449 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\obj\\Release\\net8.0\\scopedcss\\projectbundle\\MyPortfolyoWebSite.bundle.scp.css",
+      "PackagePath": "staticwebassets\\MyPortfolyoWebSite.bundle.scp.css"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\img\\about.jpg",
+      "PackagePath": "staticwebassets\\img\\about.jpg"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\img\\portfolio-1.jpg",
+      "PackagePath": "staticwebassets\\img\\portfolio-1.jpg"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\img\\portfolio-2.jpg",
+      "PackagePath": "staticwebassets\\img\\portfolio-2.jpg"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\img\\portfolio-3.jpg",
+      "PackagePath": "staticwebassets\\img\\portfolio-3.jpg"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\img\\portfolio-4.jpg",
+      "PackagePath": "staticwebassets\\img\\portfolio-4.jpg"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\img\\portfolio-5.jpg",
+      "PackagePath": "staticwebassets\\img\\portfolio-5.jpg"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\img\\portfolio-6.jpg",
+      "PackagePath": "staticwebassets\\img\\portfolio-6.jpg"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\img\\profile.jpg",
+      "PackagePath": "staticwebassets\\img\\profile.jpg"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\img\\profile.png",
+      "PackagePath": "staticwebassets\\img\\profile.png"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\img\\quote.png",
+      "PackagePath": "staticwebassets\\img\\quote.png"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\img\\review-1.jpg",
+      "PackagePath": "staticwebassets\\img\\review-1.jpg"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\img\\review-2.jpg",
+      "PackagePath": "staticwebassets\\img\\review-2.jpg"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\img\\review-3.jpg",
+      "PackagePath": "staticwebassets\\img\\review-3.jpg"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\js\\main.js",
+      "PackagePath": "staticwebassets\\js\\main.js"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\easing\\easing.js",
+      "PackagePath": "staticwebassets\\lib\\easing\\easing.js"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\easing\\easing.min.js",
+      "PackagePath": "staticwebassets\\lib\\easing\\easing.min.js"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\isotope\\isotope.pkgd.js",
+      "PackagePath": "staticwebassets\\lib\\isotope\\isotope.pkgd.js"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\isotope\\isotope.pkgd.min.js",
+      "PackagePath": "staticwebassets\\lib\\isotope\\isotope.pkgd.min.js"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\lightbox\\css\\lightbox.css",
+      "PackagePath": "staticwebassets\\lib\\lightbox\\css\\lightbox.css"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\lightbox\\css\\lightbox.min.css",
+      "PackagePath": "staticwebassets\\lib\\lightbox\\css\\lightbox.min.css"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\lightbox\\images\\close.png",
+      "PackagePath": "staticwebassets\\lib\\lightbox\\images\\close.png"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\lightbox\\images\\loading.gif",
+      "PackagePath": "staticwebassets\\lib\\lightbox\\images\\loading.gif"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\lightbox\\images\\next.png",
+      "PackagePath": "staticwebassets\\lib\\lightbox\\images\\next.png"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\lightbox\\images\\prev.png",
+      "PackagePath": "staticwebassets\\lib\\lightbox\\images\\prev.png"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\lightbox\\js\\lightbox.js",
+      "PackagePath": "staticwebassets\\lib\\lightbox\\js\\lightbox.js"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\lightbox\\js\\lightbox.min.js",
+      "PackagePath": "staticwebassets\\lib\\lightbox\\js\\lightbox.min.js"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\lightbox\\links.php",
+      "PackagePath": "staticwebassets\\lib\\lightbox\\links.php"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\slick\\ajax-loader.gif",
+      "PackagePath": "staticwebassets\\lib\\slick\\ajax-loader.gif"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\slick\\config.rb",
+      "PackagePath": "staticwebassets\\lib\\slick\\config.rb"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\slick\\fonts\\slick.eot",
+      "PackagePath": "staticwebassets\\lib\\slick\\fonts\\slick.eot"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\slick\\fonts\\slick.svg",
+      "PackagePath": "staticwebassets\\lib\\slick\\fonts\\slick.svg"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\slick\\fonts\\slick.ttf",
+      "PackagePath": "staticwebassets\\lib\\slick\\fonts\\slick.ttf"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\slick\\fonts\\slick.woff",
+      "PackagePath": "staticwebassets\\lib\\slick\\fonts\\slick.woff"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\slick\\slick-theme.css",
+      "PackagePath": "staticwebassets\\lib\\slick\\slick-theme.css"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\slick\\slick-theme.less",
+      "PackagePath": "staticwebassets\\lib\\slick\\slick-theme.less"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\slick\\slick-theme.scss",
+      "PackagePath": "staticwebassets\\lib\\slick\\slick-theme.scss"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\slick\\slick.css",
+      "PackagePath": "staticwebassets\\lib\\slick\\slick.css"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\slick\\slick.js",
+      "PackagePath": "staticwebassets\\lib\\slick\\slick.js"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\slick\\slick.less",
+      "PackagePath": "staticwebassets\\lib\\slick\\slick.less"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\slick\\slick.min.js",
+      "PackagePath": "staticwebassets\\lib\\slick\\slick.min.js"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\slick\\slick.scss",
+      "PackagePath": "staticwebassets\\lib\\slick\\slick.scss"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\typed\\typed.js",
+      "PackagePath": "staticwebassets\\lib\\typed\\typed.js"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\typed\\typed.min.js",
+      "PackagePath": "staticwebassets\\lib\\typed\\typed.min.js"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\waypoints\\links.php",
+      "PackagePath": "staticwebassets\\lib\\waypoints\\links.php"
+    },
+    {
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\lib\\waypoints\\waypoints.min.js",
+      "PackagePath": "staticwebassets\\lib\\waypoints\\waypoints.min.js"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.MyPortfolyoWebSite.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.build.MyPortfolyoWebSite.props",
+      "PackagePath": "build\\MyPortfolyoWebSite.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.MyPortfolyoWebSite.props",
+      "PackagePath": "buildMultiTargeting\\MyPortfolyoWebSite.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.buildTransitive.MyPortfolyoWebSite.props",
+      "PackagePath": "buildTransitive\\MyPortfolyoWebSite.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

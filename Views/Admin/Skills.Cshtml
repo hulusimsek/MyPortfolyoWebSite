@@ -1,0 +1,30 @@
+@model List<MyPortfolyoWebSite.Entity.Skill>
+
+    <div class="container">
+        <h2>Skill Form</h2>
+        <div class="row">
+            <div class="col-12">
+                <div class="bg-white p-4">
+                    <form asp-action="Skills" asp-controller="Admin" method="post">
+                        @for (int i = 0; i < Model.Count || i < 6; i++)
+                        {
+                            var skill = i < Model.Count ? Model[i] : new MyPortfolyoWebSite.Entity.Skill();
+                            <div class="form-group row">
+                                <input type="hidden" asp-for="@skill.SkillId" />
+                                <label class="col-sm-2 col-form-label">Skill Name @(i+1):</label>
+                                <div class="col-sm-4">
+                                    <input asp-for="@skill.Name" name="[@i].Name" class="form-control" />
+                                </div>
+                                <label class="col-sm-2 col-form-label">Skill Value @(i+1):</label>
+                                <div class="col-sm-4">
+                                    <input asp-for="@skill.Value" name="[@i].Value" class="form-control" type="number" min="0" max="100" />
+                                </div>
+                            </div>
+                        }
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
