@@ -4,7 +4,13 @@
     <div class="col-12">
       <div class="bg-white p-4">
         <h1>About Me</h1>
-        <form action="AboutMe" method="post" enctype="multipart/form-data">
+        <form
+          id="aboutMeForm"
+          asp-action="AboutMe"
+          asp-controller="Admin"
+          method="post"
+          enctype="multipart/form-data"
+        >
           <div asp-validation-summary="ModelOnly" class="text-danger"></div>
           <div class="mb-3">
             <input type="hidden" asp-for="AboutMeId" />
@@ -20,17 +26,186 @@
             <span asp-validation-for="Description" class="text-danger"></span>
           </div>
           <div class="mb-3">
+            <img
+              id="previewImage"
+              src="/img/about.png"
+              alt="Varsayılan Resim"
+              width="200"
+              height="200"
+            />
             <label for="imageFile" class="form-label">Resim: </label>
             <input
               type="file"
               name="imageFile"
               id="imageFile"
               class="form-control"
+              value="/img/about.png"
+              onchange="previewFile(this)"
             />
           </div>
-          <button type="submit" class="btn btn-primary">Kaydet</button>
+          @{ var skillIndex = 0; if (Model.Skills != null && Model.Skills.Any())
+          { skillIndex = Model.Skills.Count; } }
+          <div id="skillsContainer" data-skill-index="@skillIndex">
+            <!-- Existing skills -->
+            @if (Model.Skills != null && Model.Skills.Any()) { for (int i = 0; i
+            < Model.Skills.Count; i++) {
+            <div class="form-group row">
+              <input
+                type="hidden"
+                name="skills[@i].SkillId"
+                value="@Model.Skills[i].SkillId"
+              />
+              <label class="col-sm-2 col-form-label">Skill Name:</label>
+              <div class="col-sm-4">
+                <input
+                  type="text"
+                  name="skills[@i].Name"
+                  value="@Model.Skills[i].Name"
+                  class="form-control"
+                />
+              </div>
+              <label class="col-sm-2 col-form-label">Skill Value:</label>
+              <div class="col-sm-3">
+                <input
+                  type="number"
+                  name="skills[@i].Value"
+                  value="@Model.Skills[i].Value"
+                  class="form-control"
+                  min="0"
+                  max="100"
+                />
+              </div>
+              <div class="col-sm-1">
+                <button
+                  type="button"
+                  onclick="removeSkillField(this)"
+                  class="btn btn-danger"
+                >
+                  Remove
+                </button>
+              </div>
+            </div>
+            } }
+          </div>
+
+          <div id="deletedSkillsContainer">
+            <!-- Silinen beceri alanları burada görünecek -->
+          </div>
+          <button
+            type="button"
+            onclick="addSkillField()"
+            class="btn btn-primary"
+          >
+            Add Skill
+          </button>
+
+          <button id="saveButton" type="submit" class="btn btn-primary">
+            Save
+          </button>
         </form>
       </div>
     </div>
   </div>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  function addSkillField() {
+    var container = document.getElementById("skillsContainer");
+    var skillIndex = parseInt(container.getAttribute("data-skill-index"));
+
+    var skillField = `
+      <div class="form-group row">
+        <input type="hidden" name="skills[${skillIndex}].SkillId" value="0" />
+        <label class="col-sm-2 col-form-label">Skill Name:</label>
+        <div class="col-sm-4">
+          <input type="text" name="skills[${skillIndex}].Name" class="form-control" />
+        </div>
+        <label class="col-sm-2 col-form-label">Skill Value:</label>
+        <div class="col-sm-3">
+          <input type="number" name="skills[${skillIndex}].Value" class="form-control" min="0" max="100" />
+        </div>
+        <div class="col-sm-1">
+          <button type="button" onclick="removeSkillField(this)" class="btn btn-danger">Remove</button>
+        </div>
+      </div>
+    `;
+
+    container.insertAdjacentHTML("beforeend", skillField);
+    skillIndex++;
+    container.setAttribute("data-skill-index", skillIndex);
+  }
+
+  function removeSkillField(button) {
+    // Beğenin bulunduğu div elementini bul
+    var skillDiv = button.closest(".form-group");
+
+    // Eğer beceri alanı yeni eklenmişse, sadece DOM'dan kaldır
+    if (
+      skillDiv.querySelector(
+        'input[name^="skills"][name$=".SkillId"][value="0"]'
+      )
+    ) {
+      skillDiv.remove();
+      return;
+    }
+
+    // Silinecek becerinin ID'sini al
+    var skillId = $(skillDiv).find('input[name$=".SkillId"]').val();
+
+    // AJAX isteği yaparak beceriyi sil
+    $.ajax({
+      url: "/Admin/RemoveSkill",
+      type: "POST",
+      data: { skillId: skillId },
+      success: function (response) {
+        // Başarılı yanıt alındığında yapılacak işlemler
+        console.log("Skill removed successfully.");
+        // Silinen beceriyi DOM'dan kaldır
+        skillDiv.remove();
+        // Bildirim göster
+        showCustomToast("Skill removed successfully.");
+      },
+      error: function (xhr, status, error) {
+        // Hata durumunda yapılacak işlemler
+        console.error("Error while removing skill:", xhr.responseText);
+      },
+    });
+  }
+
+  $(document).ready(function () {
+    // Form submit olayını engelle
+    $("#aboutMeForm").submit(function (event) {
+      event.preventDefault();
+      saveForm();
+    });
+  });
+
+  function saveForm() {
+    // Form verilerini al
+    var formData = new FormData($("#aboutMeForm")[0]);
+
+    // Form verilerini sunucuya gönder
+    $.ajax({
+      url: $("#aboutMeForm").attr("action"),
+      type: $("#aboutMeForm").attr("method"),
+      data: formData,
+      processData: false,
+      contentType: false,
+      success: function (response) {
+        // Başarılı yanıt alındığında yapılacak işlemler
+        console.log(response);
+        showCustomToast("Form successfully saved.");
+        // Sayfayı yenile
+        setTimeout(function () {
+          window.location.href = "/Admin/Index";
+        }, 2000);
+        // Index sayfasına yönlendir
+      },
+      error: function (xhr, status, error) {
+        // Hata durumunda yapılacak işlemler
+        console.error(xhr.responseText);
+      },
+    });
+  }
+</script>

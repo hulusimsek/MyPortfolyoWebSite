@@ -1,44 +1,41 @@
-@if (TempData["ErrorMessage"] != null)
-{
-    <div class="alert alert-danger" role="alert">
-        @TempData["ErrorMessage"]
-    </div>
+@if (TempData["ErrorMessage"] != null) {
+<div class="alert alert-danger" role="alert">@TempData["ErrorMessage"]</div>
 }
 
 <div class="container mt-5">
-    <div class="row">
-        <div class="col-md-4">
-            <div class="card mb-4">
-                <div class="card-body">
-                    <h5 class="card-title">About</h5>
-                    <a asp-action="AboutMe" class="btn btn-primary">Edit About</a>
-                </div>
-            </div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title">About</h5>
+          <a asp-action="AboutMe" class="btn btn-primary">Edit About</a>
         </div>
-        <div class="col-md-4">
-            <div class="card mb-4">
-                <div class="card-body">
-                    <h5 class="card-title">Skills</h5>
-                    <a asp-action="Skills" class="btn btn-primary">Edit Skills</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card mb-4">
-                <div class="card-body">
-                    <h5 class="card-title">Products</h5>
-                    <a href="#" class="btn btn-primary">View Products</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card mb-4">
-                <div class="card-body">
-                    <h5 class="card-title">Customers</h5>
-                    <a href="#" class="btn btn-primary">View Customers</a>
-                </div>
-            </div>
-        </div>
-        <!-- Add more cards/buttons as needed -->
+      </div>
     </div>
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title">Education</h5>
+          <a asp-action="Education" class="btn btn-primary">Edit Education</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title">Experience</h5>
+          <a asp-action="Experience" class="btn btn-primary">Edit Experience</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title">Customers</h5>
+          <a href="#" class="btn btn-primary">View Customers</a>
+        </div>
+      </div>
+    </div>
+    <!-- Add more cards/buttons as needed -->
+  </div>
 </div>

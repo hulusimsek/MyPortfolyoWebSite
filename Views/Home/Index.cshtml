@@ -116,7 +116,7 @@
         <div class="large-btn">
           <div class="content-inner">
             <a class="btn" href="#"><i class="fa fa-download"></i>Resume</a>
-            <a class="btn" href="#"
+            <a class="btn" href="#contact"
               ><i class="fa fa-hands-helping"></i>Hire Me</a
             >
           </div>
@@ -138,28 +138,44 @@
               </div>
               <div class="col-md-6 col-lg-7">
                 <p>@ViewBag.AboutMe.Description</p>
-                <a class="btn" href="#">Hire Me</a>
+                <a class="btn" href="#contact">Hire Me</a>
               </div>
               <div class="row">
+                <style>
+                  .progress {
+                    position: relative;
+                  }
+
+                  .progress .progress-label {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    background-color: transparent;
+                    color: black;
+                    padding: 3px 8px;
+                    border-radius: 4px;
+                  }
+                </style>
                 <div class="col-md-6">
                   <div class="skills">
-                    @if (ViewBag.Skills != null && ViewBag.Skills.Count > 0) {
-                    var halfCount = (int)Math.Ceiling(ViewBag.Skills.Count /
-                    2.0); var count = 0; foreach (var skill in ViewBag.Skills) {
+                    @if (ViewBag.AboutMe.Skills != null &&
+                    ViewBag.AboutMe.Skills.Count > 0) { var halfCount =
+                    (int)Math.Ceiling(ViewBag.AboutMe.Skills.Count / 2.0); var
+                    count = 0; foreach (var skill in ViewBag.AboutMe.Skills) {
                     if (count >= halfCount) { break; }
                     <div class="skill-name">
                       <p>@skill.Name</p>
-                      <p>@skill.Value%</p>
-                    </div>
-                    <div class="progress">
-                      <div
-                        class="progress-bar"
-                        role="progressbar"
-                        style="width: @skill.Value%"
-                        aria-valuenow="@skill.Value"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
+                      <p class="progress-label">@skill.Value%</p>
+                      <div class="progress">
+                        <div
+                          class="progress-bar"
+                          role="progressbar"
+                          style="width: @skill.Value%"
+                          aria-valuenow="@skill.Value"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                        ></div>
+                      </div>
                     </div>
                     count++; } } else {
                     <p>No skills found.</p>
@@ -168,23 +184,24 @@
                 </div>
                 <div class="col-md-6">
                   <div class="skills">
-                    @if (ViewBag.Skills != null && ViewBag.Skills.Count > 0) {
-                    var halfCount = (int)Math.Ceiling(ViewBag.Skills.Count /
-                    2.0); var count = 0; foreach (var skill in ViewBag.Skills) {
+                    @if (ViewBag.AboutMe.Skills != null &&
+                    ViewBag.AboutMe.Skills.Count > 0) { var halfCount =
+                    (int)Math.Ceiling(ViewBag.AboutMe.Skills.Count / 2.0); var
+                    count = 0; foreach (var skill in ViewBag.AboutMe.Skills) {
                     if (count < halfCount) { count++; continue; }
                     <div class="skill-name">
                       <p>@skill.Name</p>
-                      <p>@skill.Value%</p>
-                    </div>
-                    <div class="progress">
-                      <div
-                        class="progress-bar"
-                        role="progressbar"
-                        style="width: @skill.Value%"
-                        aria-valuenow="@skill.Value"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
+                      <div class="progress">
+                        <div
+                          class="progress-bar"
+                          role="progressbar"
+                          style="width: @skill.Value%"
+                          aria-valuenow="@skill.Value"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                        ></div>
+                      </div>
+                      <span class="progress-label">@skill.Value%</span>
                     </div>
                     } } else {
                     <p>No skills found.</p>
@@ -198,18 +215,17 @@
         } else {
         <p>About Me information not found.</p>
         }
-        <script>
-          // JavaScript kullanarak progress bar'ı güncelle
-          var progressBars = document.querySelectorAll(".progress-bar");
-          progressBars.forEach(function (bar) {
-            var skillValue = parseInt(
-              document.getElementById("skillValue").innerText
-            );
-            bar.style.width = skillValue + "%";
-            bar.setAttribute("aria-valuenow", skillValue);
-          });
-        </script>
+        <style>
+          .skill-name {
+            position: relative;
+          }
 
+          .progress-label {
+            position: absolute;
+            top: 0;
+            right: 0;
+          }
+        </style>
         <!-- About End -->
 
         <!-- Education Start -->
@@ -220,82 +236,35 @@
             </div>
             <div class="row align-items-center">
               <div class="col-md-6">
+                @foreach (var education in ViewBag.FirstHalfEducations) {
                 <div class="edu-col">
-                  <span>09/2020 - 06/2024</span>
-                  <h3>Bachelor's Degree</h3>
-                  <p>
-                    Computer Engineering - Namık Kemal University (4th Year)
-                  </p>
-                  <p>Tekirdağ, Turkey</p>
+                  <span
+                    >@education.StartDate.ToString("MM/yyyy") -
+                    @education.EndDate.ToString("MM/yyyy")</span
+                  >
+                  <h3>@education.Degree</h3>
+                  <p>@education.SchoolName</p>
+                  <p>@education.Field</p>
                 </div>
+                }
               </div>
               <div class="col-md-6">
+                @foreach (var education in ViewBag.SecondHalfEducations) {
                 <div class="edu-col">
-                  <span>09/2019 - 06/2020</span>
-                  <h3>English Preparatory Education</h3>
-                  <p>Namık Kemal University</p>
-                  <p>Tekirdağ, Turkey</p>
+                  <span
+                    >@education.StartDate.ToString("MM/yyyy") -
+                    @education.EndDate.ToString("MM/yyyy")</span
+                  >
+                  <h3>@education.Degree</h3>
+                  <p>@education.SchoolName</p>
+                  <p>@education.Field</p>
                 </div>
-              </div>
-              <div class="col-md-6">
-                <div class="edu-col">
-                  <span>09/2014 - 06/2018</span>
-                  <h3>High School Education</h3>
-                  <p>Mathematics and Science Anatolian High School</p>
-                  <p>Istanbul, Turkey</p>
-                </div>
+                }
               </div>
             </div>
           </div>
         </div>
         <!-- Education Start -->
-
-        <!-- Experience Start -->
-        <!-- <div class="experience" id="experience">
-                    <div class="content-inner">
-                        <div class="content-header">
-                            <h2>Experience</h2>
-                        </div>
-                        <div class="row align-items-center">
-                            <div class="col-md-6">
-                                <div class="exp-col">
-                                    <span>01-Jan-2020 <i>to</i> 31-Dec-2050</span>
-                                    <h3>Codex Solution</h3>
-                                    <h4>San Francisco, CA</h4>
-                                    <h5>Project Manager</h5>
-                                    <p>Lorem ipsum dolor sit amet elit suscipit orci. Donec molestie velit id libero.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="exp-col">
-                                    <span>01-Jan-2020 <i>to</i> 31-Dec-2050</span>
-                                    <h3>Soft Solution Ltd</h3>
-                                    <h4>San Francisco, CA</h4>
-                                    <h5>Web Developer</h5>
-                                    <p>Lorem ipsum dolor sit amet elit suscipit orci. Donec molestie velit id libero.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="exp-col">
-                                    <span>01-Jan-2020 <i>to</i> 31-Dec-2050</span>
-                                    <h3>ABC Soft Ltd</h3>
-                                    <h4>San Francisco, CA</h4>
-                                    <h5>Web Designer</h5>
-                                    <p>Lorem ipsum dolor sit amet elit suscipit orci. Donec molestie velit id libero.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="exp-col">
-                                    <span>01-Jan-2020 <i>to</i> 31-Dec-2050</span>
-                                    <h3>Soft Agency</h3>
-                                    <h4>San Francisco, CA</h4>
-                                    <h5>Graphic Designer</h5>
-                                    <p>Lorem ipsum dolor sit amet elit suscipit orci. Donec molestie velit id libero.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
 
         <div class="experience" id="experience">
           <div class="content-inner">
@@ -303,14 +272,20 @@
               <h2>Experience</h2>
             </div>
             <div class="row align-items-center">
+              @foreach (var experience in ViewBag.Experiences) {
               <div class="col-md-6">
                 <div class="exp-col">
-                  <span>08/2023 - 09/2023</span>
-                  <h3>Software Internship</h3>
-                  <h4>Turkcell Communication Services Inc.</h4>
-                  <h5>Data Analytics Solutions</h5>
+                  <span
+                    >@experience.StartDate.ToString("MM/yyyy") -
+                    @experience.EndDate.ToString("MM/yyyy")</span
+                  >
+                  <h3>@experience.Position</h3>
+                  <h4>@experience.CompanyName</h4>
+                  <h5>@experience.Description</h5>
+                  <h6>@experience.City</h6>
                 </div>
               </div>
+              }
             </div>
           </div>
         </div>

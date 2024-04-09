@@ -1,0 +1,74 @@
+@model Education
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="bg-white p-4">
+        <h1>Education Information</h1>
+        <form
+          id="educationForm"
+          asp-action="EducationEdit"
+          asp-controller="Admin"
+          asp-route-id="@Model.EducationId"
+          method="post"
+        >
+          <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+          <div class="mb-3">
+            <input type="hidden" asp-for="EducationId" />
+          </div>
+          <div class="mb-3">
+            <label asp-for="SchoolName" class="form-label"></label>
+            <input asp-for="SchoolName" class="form-control" />
+            <span asp-validation-for="SchoolName" class="text-danger"></span>
+          </div>
+          <div class="mb-3">
+            <label asp-for="Degree" class="form-label"></label>
+            <input asp-for="Degree" class="form-control" />
+            <span asp-validation-for="Degree" class="text-danger"></span>
+          </div>
+          <div class="mb-3">
+            <label asp-for="Field" class="form-label"></label>
+            <input asp-for="Field" class="form-control" />
+            <span asp-validation-for="Field" class="text-danger"></span>
+          </div>
+          <div class="mb-3">
+            <label asp-for="StartDate" class="form-label"></label>
+            <input asp-for="StartDate" class="form-control" type="date" />
+            <span asp-validation-for="StartDate" class="text-danger"></span>
+          </div>
+          <div class="mb-3">
+            <label asp-for="EndDate" class="form-label"></label>
+            <input asp-for="EndDate" class="form-control" type="date" />
+            <span asp-validation-for="EndDate" class="text-danger"></span>
+          </div>
+          <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+@section Scripts {
+<script>
+  $(document).ready(function () {
+    $("#educationForm").submit(function (e) {
+      e.preventDefault(); // Formun normal submit işlemini engelle
+      var formData = $(this).serialize(); // Form verilerini al
+      $.post($(this).attr("action"), formData) // POST isteği gönder
+        .done(function (response) {
+          // Başarılı yanıt alındığında yapılacak işlemler
+          console.log(response);
+          showCustomToast("Form successfully saved.");
+          // Sayfayı yenile
+          setTimeout(function () {
+            window.location.href = "/Admin/Education";
+          }, 2000);
+        })
+        .fail(function (xhr, status, error) {
+          // Hata durumunda yapılacak işlemler
+          console.error(xhr.responseText);
+          alert("An error occurred while saving education information.");
+        });
+    });
+  });
+</script>
+}

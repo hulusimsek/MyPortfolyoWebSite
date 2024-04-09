@@ -199,11 +199,17 @@ namespace MyPortfolyoWebSite.Migrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Value = table.Column<int>(type: "int", nullable: false)
+                    Value = table.Column<int>(type: "int", nullable: false),
+                    AboutMeId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Skills", x => x.SkillId);
+                    table.ForeignKey(
+                        name: "FK_Skills_AboutMe_AboutMeId",
+                        column: x => x.AboutMeId,
+                        principalTable: "AboutMe",
+                        principalColumn: "AboutMeId");
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -370,14 +376,16 @@ namespace MyPortfolyoWebSite.Migrations
                 table: "AspNetUsers",
                 column: "NormalizedUserName",
                 unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Skills_AboutMeId",
+                table: "Skills",
+                column: "AboutMeId");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "AboutMe");
-
             migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");
 
@@ -416,6 +424,9 @@ namespace MyPortfolyoWebSite.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "AboutMe");
         }
     }
 }

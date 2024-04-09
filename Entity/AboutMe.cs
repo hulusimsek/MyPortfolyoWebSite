@@ -9,9 +9,10 @@ namespace MyPortfolyoWebSite.Entity
 {
     public class AboutMe
     {
-        public int? AboutMeId { get; set; }
+        public int AboutMeId { get; set; }
         public string? Name { get; set; }
         public string? Description { get; set; }
+        public List<Skill>? Skills { get; set; }
         public string? ProfilePicturePath { get; set; } // Sabit yol
     }
 }

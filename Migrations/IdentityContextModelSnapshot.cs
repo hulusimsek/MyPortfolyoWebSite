@@ -220,11 +220,11 @@ namespace MyPortfolyoWebSite.Migrations
 
             modelBuilder.Entity("MyPortfolyoWebSite.Entity.AboutMe", b =>
                 {
-                    b.Property<int?>("AboutMeId")
+                    b.Property<int>("AboutMeId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int?>("AboutMeId"));
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("AboutMeId"));
 
                     b.Property<string>("Description")
                         .HasColumnType("longtext");
@@ -376,6 +376,9 @@ namespace MyPortfolyoWebSite.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("SkillId"));
 
+                    b.Property<int?>("AboutMeId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
                         .HasColumnType("longtext");
 
@@ -383,6 +386,8 @@ namespace MyPortfolyoWebSite.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("SkillId");
+
+                    b.HasIndex("AboutMeId");
 
                     b.ToTable("Skills");
                 });
@@ -436,6 +441,18 @@ namespace MyPortfolyoWebSite.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("MyPortfolyoWebSite.Entity.Skill", b =>
+                {
+                    b.HasOne("MyPortfolyoWebSite.Entity.AboutMe", null)
+                        .WithMany("Skills")
+                        .HasForeignKey("AboutMeId");
+                });
+
+            modelBuilder.Entity("MyPortfolyoWebSite.Entity.AboutMe", b =>
+                {
+                    b.Navigation("Skills");
                 });
 #pragma warning restore 612, 618
         }

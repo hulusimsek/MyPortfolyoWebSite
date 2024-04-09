@@ -1,0 +1,75 @@
+@model Experience
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="bg-white p-4">
+                <h1>Create Experience</h1>
+                <form id="experienceForm" asp-action="ExperienceEdit" asp-controller="Admin" asp-route-id="@Model.ExperienceId" method="post">
+                    @Html.AntiForgeryToken()
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="mb-3">
+                        <input type="hidden" asp-for="ExperienceId" />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="CompanyName" class="form-label"></label>
+                        <input asp-for="CompanyName" class="form-control" />
+                        <span asp-validation-for="CompanyName" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Position" class="form-label"></label>
+                        <input asp-for="Position" class="form-control" />
+                        <span asp-validation-for="Position" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="City" class="form-label"></label>
+                        <input asp-for="City" class="form-control" />
+                        <span asp-validation-for="City" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="StartDate" class="form-label"></label>
+                        <input asp-for="StartDate" class="form-control" type="date" />
+                        <span asp-validation-for="StartDate" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="EndDate" class="form-label"></label>
+                        <input asp-for="EndDate" class="form-control" type="date" />
+                        <span asp-validation-for="EndDate" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Description" class="form-label"></label>
+                        <textarea asp-for="Description" class="form-control"></textarea>
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $("#experienceForm").submit(function (e) {
+                e.preventDefault(); // Formun normal submit işlemini engelle
+                var formData = $(this).serialize(); // Form verilerini al
+                $.post($(this).attr("action"), formData) // POST isteği gönder
+                    .done(function (response) {
+                        // Başarılı yanıt alındığında yapılacak işlemler
+                        console.log(response);
+                        showCustomToast("Form successfully saved.");
+                        // Sayfayı yenile
+                        setTimeout(function () {
+                            window.location.href = "/Admin/Index";
+                        }, 2000);
+                    })
+                    .fail(function (xhr, status, error) {
+                        // Hata durumunda yapılacak işlemler
+                        console.error(xhr.responseText);
+                        alert("An error occurred while saving experience information.");
+                    });
+            });
+        });
+    </script>
+}

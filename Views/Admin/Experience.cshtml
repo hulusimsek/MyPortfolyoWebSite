@@ -1,0 +1,71 @@
+@model List<Experience>
+
+    <div class="container">
+        <div class="experience" id="experience">
+            <div class="content-inner">
+                <div class="content-header">
+                    <h2>Experience</h2>
+                </div>
+                @Html.AntiForgeryToken()
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Company Name</th>
+                                    <th>Position</th>
+                                    <th>City</th>
+                                    <th>Start Date</th>
+                                    <th>End Date</th>
+                                    <th>Description</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var experience in Model)
+                                {
+                                    <tr>
+                                        <td>@experience.ExperienceId</td>
+                                        <td>@experience.CompanyName</td>
+                                        <td>@experience.Position</td>
+                                        <td>@experience.City</td>
+                                        <td>@experience.StartDate.ToString("MM/yyyy")</td>
+                                        <td>@experience.EndDate.ToString("MM/yyyy")</td>
+                                        <td>@experience.Description</td>
+                                        <td>
+                                            <a href="@Url.Action("ExperienceEdit", "Admin", new { id = experience.ExperienceId })" class="btn btn-primary">Edit</a>
+                                            <button class="btn btn-danger delete-experience" data-id="@experience.ExperienceId">Delete</button>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <a href="@Url.Action("ExperienceCreate", "Admin")" class="btn btn-success">Add New Experience</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    @section Scripts {
+        <script>
+            $(document).ready(function () {
+                $(".delete-experience").on("click", function () {
+                    var experienceId = $(this).data("id");
+                    
+                    $.ajax({
+                        url: "/Admin/ExperienceDelete/" + experienceId,
+                        type: "DELETE",
+                        success: function () {
+                            location.reload(); // Sayfayı yenile
+                        },
+                        error: function () {
+                            alert("An error occurred while deleting the experience.");
+                        }
+                    });
+                });
+            });
+        </script>
+    }
+    

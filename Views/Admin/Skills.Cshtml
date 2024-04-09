@@ -1,69 +1,132 @@
-@model List<MyPortfolyoWebSite.Entity.Skill>
+@model AboutMe
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="bg-white p-4">
+        <h1>About Me</h1>
+        <form
+          asp-action="AboutMe"
+          asp-controller="Admin"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+          <div class="mb-3">
+            <input type="hidden" asp-for="AboutMeId" />
+          </div>
+          <div class="mb-3">
+            <label asp-for="Name" class="form-label"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+          </div>
+          <div class="mb-3">
+            <label asp-for="Description" class="form-label"></label>
+            <input asp-for="Description" class="form-control" />
+            <span asp-validation-for="Description" class="text-danger"></span>
+          </div>
+          <div class="mb-3">
+            <label for="imageFile" class="form-label">Resim: </label>
+            <input
+              type="file"
+              name="imageFile"
+              id="imageFile"
+              class="form-control"
+            />
+          </div>
+          @{ var skillIndex = 0; if (Model.Skills != null && Model.Skills.Any())
+          { skillIndex = Model.Skills.Count; } }
+          <div id="skillsContainer" data-skill-index="@skillIndex">
+            <!-- Existing skills -->
+            @if (Model.Skills != null && Model.Skills.Any()) { for (int i = 0; i
+            < Model.Skills.Count; i++) {
+            <div class="form-group row">
+              <input
+                type="hidden"
+                name="skills[@i].SkillId"
+                value="@Model.Skills[i].SkillId"
+              />
+              <label class="col-sm-2 col-form-label">Skill Name:</label>
+              <div class="col-sm-4">
+                <input
+                  type="text"
+                  name="skills[@i].Name"
+                  value="@Model.Skills[i].Name"
+                  class="form-control"
+                />
+              </div>
+              <label class="col-sm-2 col-form-label">Skill Value:</label>
+              <div class="col-sm-3">
+                <input
+                  type="number"
+                  name="skills[@i].Value"
+                  value="@Model.Skills[i].Value"
+                  class="form-control"
+                  min="0"
+                  max="100"
+                />
+              </div>
+              <div class="col-sm-1">
+                <button
+                  type="button"
+                  onclick="removeSkillField(this)"
+                  class="btn btn-danger"
+                >
+                  Remove
+                </button>
+              </div>
+            </div>
+            } }
+          </div>
+          <button
+            type="button"
+            onclick="addSkillField()"
+            class="btn btn-primary"
+          >
+            Add Skill
+          </button>
 
-    <div class="container">
-        <h2>Skill Form</h2>
-        <div class="row">
-            <div class="col-12">
-                <div class="bg-white p-4">
-                    <form id="skillsForm" asp-action="Skills" asp-controller="Admin" method="post">
-                        <div id="skillsContainer">
-                            <!-- Existing skills -->
-                            @for (int i = 0; i < Model.Count; i++)
-                            {
-                                <div class="form-group row">
-                                    <input type="hidden" name="skills[@i].SkillId" value="@Model[i].SkillId" />
-                                    <label class="col-sm-2 col-form-label">Skill Name:</label>
-                                    <div class="col-sm-4">
-                                        <input type="text" name="skills[@i].Name" value="@Model[i].Name" class="form-control" />
-                                    </div>
-                                    <label class="col-sm-2 col-form-label">Skill Value:</label>
-                                    <div class="col-sm-3">
-                                        <input type="number" name="skills[@i].Value" value="@Model[i].Value" class="form-control" min="0" max="100" />
-                                    </div>
-                                    <div class="col-sm-1">
-                                        <button type="button" onclick="removeSkillField(this)" class="btn btn-danger">Remove</button>
-                                    </div>
-                                </div>
-                            }
-                        </div>
-                        <button type="button" onclick="addSkillField()" class="btn btn-primary">Add Skill</button>
-                        <button type="submit" class="btn btn-primary">Save</button>
-                    </form>
+          <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  function addSkillField() {
+    var container = document.getElementById("skillsContainer");
+    var skillIndex = parseInt(container.getAttribute("data-skill-index"));
+
+    var skillField = `
+            <div class="form-group row">
+                <input type="hidden" name="skills[${skillIndex}].SkillId" value="0" />
+                <label class="col-sm-2 col-form-label">Skill Name:</label>
+                <div class="col-sm-4">
+                    <input type="text" name="skills[${skillIndex}].Name" class="form-control" />
+                </div>
+                <label class="col-sm-2 col-form-label">Skill Value:</label>
+                <div class="col-sm-3">
+                    <input type="number" name="skills[${skillIndex}].Value" class="form-control" min="0" max="100" />
+                </div>
+                <div class="col-sm-1">
+                    <button type="button" onclick="removeSkillField(this)" class="btn btn-danger">Remove</button>
                 </div>
             </div>
-        </div>
-    </div>
-    
-    <script>
-        var skillIndex = @Model.Count;
-    
-        function addSkillField() {
-            var container = document.getElementById('skillsContainer');
-    
-            var skillField = `
-                <div class="form-group row">
-                    <input type="hidden" name="skills[${skillIndex}].SkillId" value="0" />
-                    <label class="col-sm-2 col-form-label">Skill Name:</label>
-                    <div class="col-sm-4">
-                        <input type="text" name="skills[${skillIndex}].Name" class="form-control" />
-                    </div>
-                    <label class="col-sm-2 col-form-label">Skill Value:</label>
-                    <div class="col-sm-3">
-                        <input type="number" name="skills[${skillIndex}].Value" class="form-control" min="0" max="100" />
-                    </div>
-                    <div class="col-sm-1">
-                        <button type="button" onclick="removeSkillField(this)" class="btn btn-danger">Remove</button>
-                    </div>
-                </div>
-            `;
-    
-            container.insertAdjacentHTML('beforeend', skillField);
-            skillIndex++;
-        }
-    
-        function removeSkillField(element) {
-            var container = element.closest('.form-group');
-            container.remove();
-        }
-    </script>
-    
+        `;
+
+    container.insertAdjacentHTML("beforeend", skillField);
+    skillIndex++;
+    container.setAttribute("data-skill-index", skillIndex);
+  }
+
+  function removeSkillField(element) {
+    var container = element.closest(".form-group");
+    container.querySelector('[name$=".Name"]').name =
+      "deletedSkills[" + element.dataset.skillId + "].Name";
+    container.querySelector('[name$=".Value"]').name =
+      "deletedSkills[" + element.dataset.skillId + "].Value";
+    var hiddenInputs = container.querySelectorAll('input[type="hidden"]');
+    hiddenInputs.forEach(function (hiddenInput) {
+      hiddenInput.type = "hidden";
+    });
+  }
+</script>

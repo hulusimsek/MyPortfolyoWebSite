@@ -1,0 +1,43 @@
+@model List<Education>
+<div class="container">
+    <div class="education" id="education">
+        <div class="content-inner">
+            <div class="content-header">
+                <h2>Education</h2>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-md-12">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>School Name</th>
+                                <th>Degree</th>
+                                <th>Field</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var education in Model)
+                            {
+                                <tr>
+                                    <td>@education.SchoolName</td>
+                                    <td>@education.Degree</td>
+                                    <td>@education.Field</td>
+                                    <td>@education.StartDate.ToString("MM/yyyy")</td>
+                                    <td>@education.EndDate.ToString("MM/yyyy")</td>
+                                    <td>
+                                        <a href="@Url.Action("EducationEdit", "Admin", new { id = education.EducationId })" class="btn btn-primary">Edit</a>
+                                        <a href="@Url.Action("EducationDelete", "Admin", new { id = education.EducationId })" class="btn btn-danger">Delete</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <a href="@Url.Action("EducationCreate", "Admin")" class="btn btn-success">Add New Education</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

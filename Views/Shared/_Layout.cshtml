@@ -1,21 +1,62 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - MyPortfolyoWebSite</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/MyPortfolyoWebSite.styles.css" asp-append-version="true" />
-</head>
-<body>
-    <header>
-
-    </header>
+    <link
+      rel="stylesheet"
+      href="~/MyPortfolyoWebSite.styles.css"
+      asp-append-version="true"
+    />
+  </head>
+  <body>
+    <div id="notification" style="display: none">
+        <span class="dismiss"><a title="dismiss this notification">x</a></span>
+      </div>
+    <header></header>
     @RenderBody()
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+      function showCustomToast(message) {
+        // Toast mesajını güncelle
+        $("#notification").fadeIn("slow").append(message);
+        $(".dismiss").click(function () {
+          $("#notification").fadeOut("slow");
+        });
+      }
+    </script>
     @await RenderSectionAsync("Scripts", required: false)
-</body>
+  </body>
 </html>
+<style>
+    #notification {
+      position:fixed;
+      top:0px;
+      width:100%;
+      z-index:105;
+      text-align:center;
+      font-weight:normal;
+      font-size:14px;
+      font-weight:bold;
+      color:white;
+      background-color:#FF7800;
+      padding:5px;
+  }
+  #notification span.dismiss {
+      border:2px solid #FFF;
+      padding:0 5px;
+      cursor:pointer;
+      float:right;
+      margin-right:10px;
+  }
+  #notification a {
+      color:white;
+      text-decoration:none;
+      font-weight:bold
+  }
+  </style>
