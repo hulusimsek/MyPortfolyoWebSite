@@ -225,20 +225,8 @@
       "PackagePath": "staticwebassets\\img\\fa4a8300-c492-4fd5-ad1c-e74b310b3629.png"
     },
     {
-      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\img\\portfolio-1.jpg",
-      "PackagePath": "staticwebassets\\img\\portfolio-1.jpg"
-    },
-    {
-      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\img\\portfolio-2.jpg",
-      "PackagePath": "staticwebassets\\img\\portfolio-2.jpg"
-    },
-    {
-      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\img\\portfolio-3.jpg",
-      "PackagePath": "staticwebassets\\img\\portfolio-3.jpg"
-    },
-    {
-      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\img\\portfolio-4.jpg",
-      "PackagePath": "staticwebassets\\img\\portfolio-4.jpg"
+      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\img\\favicon.png",
+      "PackagePath": "staticwebassets\\img\\favicon.png"
     },
     {
       "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\img\\portfolio-5.jpg",
@@ -255,22 +243,6 @@
     {
       "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\img\\profile.png",
       "PackagePath": "staticwebassets\\img\\profile.png"
-    },
-    {
-      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\img\\quote.png",
-      "PackagePath": "staticwebassets\\img\\quote.png"
-    },
-    {
-      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\img\\review-1.jpg",
-      "PackagePath": "staticwebassets\\img\\review-1.jpg"
-    },
-    {
-      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\img\\review-2.jpg",
-      "PackagePath": "staticwebassets\\img\\review-2.jpg"
-    },
-    {
-      "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\img\\review-3.jpg",
-      "PackagePath": "staticwebassets\\img\\review-3.jpg"
     },
     {
       "Id": "D:\\Yazilim\\Web-2\\aspnet-core\\MyPortfolyoWebSite\\wwwroot\\js\\main.js",

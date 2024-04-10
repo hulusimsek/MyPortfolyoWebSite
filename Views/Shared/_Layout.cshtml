@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - MyPortfolyoWebSite</title>
+    <title>@ViewData["Title"] - MyPortfolioWebsite</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link
@@ -11,17 +11,60 @@
       href="~/MyPortfolyoWebSite.styles.css"
       asp-append-version="true"
     />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link href="img/favicon.png" rel="icon" />
 
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS Libraries -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="~/lib/slick/slick.css" rel="stylesheet" />
+    <link href="~/lib/slick/slick-theme.css" rel="stylesheet" />
+    <link href="~/lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="~/css/style.css" rel="stylesheet" />
+
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="hulusimsek, hulusi şimşek, cv" />
+    <meta name="description" content="My Portfolio Website for Hulusi Şimşek" />
   </head>
-  <body>
+  <body data-spy="scroll" data-target=".navbar" data-offset="51">
     <div id="notification" style="display: none">
-        <span class="dismiss"><a title="dismiss this notification">x</a></span>
-      </div>
+      <span class="dismiss"><a title="dismiss this notification">x</a></span>
+    </div>
     <header></header>
     @RenderBody()
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/easing/easing.min.js"></script>
+    <script src="~/lib/slick/slick.min.js"></script>
+    <script src="~/lib/typed/typed.min.js"></script>
+    <script src="~/lib/waypoints/waypoints.min.js"></script>
+    <script src="~/lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="~/lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="~/js/main.js"></script>
 
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script>
@@ -37,29 +80,29 @@
   </body>
 </html>
 <style>
-    #notification {
-      position:fixed;
-      top:0px;
-      width:100%;
-      z-index:105;
-      text-align:center;
-      font-weight:normal;
-      font-size:14px;
-      font-weight:bold;
-      color:white;
-      background-color:#FF7800;
-      padding:5px;
+  #notification {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 105;
+    text-align: center;
+    font-weight: normal;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background-color: #ff7800;
+    padding: 5px;
   }
   #notification span.dismiss {
-      border:2px solid #FFF;
-      padding:0 5px;
-      cursor:pointer;
-      float:right;
-      margin-right:10px;
+    border: 2px solid #fff;
+    padding: 0 5px;
+    cursor: pointer;
+    float: right;
+    margin-right: 10px;
   }
   #notification a {
-      color:white;
-      text-decoration:none;
-      font-weight:bold
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
   }
-  </style>
+</style>

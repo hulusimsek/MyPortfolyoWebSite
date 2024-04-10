@@ -5,8 +5,8 @@ namespace MyPortfolyoWebSite.Models
 {
     public static class IdentitySeedData
     {
-        private const string adminUser = "mrholmeess";
-        private const string adminPassword = "1907_Pubg5858";
+        private const string adminUser = "";
+        private const string adminPassword = "";
 
         public static async void IdentityTestUser(IApplicationBuilder app)
         {
