@@ -1,0 +1,36 @@
+@model Service
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="bg-white p-4">
+                <h1>Service Edit</h1>
+                <form id="serviceForm" asp-action="ServiceEdit" asp-controller="Admin" method="post" enctype="multipart/form-data">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="mb-3">
+                        <input type="hidden" asp-for="ServiceId" />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="ServiceName" class="form-label"></label>
+                        <input asp-for="ServiceName" class="form-control" />
+                        <span asp-validation-for="ServiceName" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Description" class="form-label"></label>
+                        <input asp-for="Description" class="form-control" />
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Current Image</label>
+                        <img src="@Model.IconPicturePath" alt="Current Image" width="100" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">New Image</label>
+                        <input type="file" name="imageFile" class="form-control" />
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

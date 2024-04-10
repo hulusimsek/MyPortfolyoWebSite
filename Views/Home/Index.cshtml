@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@model ContactViewModel
+
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -37,7 +39,7 @@
     <div class="wrapper">
       <div class="sidebar">
         <div class="sidebar-header">
-          <img src="img/profile.jpg" alt="Image" />
+          <img src="@ViewBag.Header.ProfilePicturePath" alt="Image" />
         </div>
         <div class="sidebar-content">
           <nav class="navbar navbar-expand-md bg-dark navbar-dark">
@@ -92,9 +94,11 @@
           </nav>
         </div>
         <div class="sidebar-footer">
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          @foreach (var linkIcon in ViewBag.Contact.LinkIcons) {
+          <a class="btn" href="@linkIcon.Url"
+            ><i class="@linkIcon.IconClass"></i
+          ></a>
+          }
         </div>
       </div>
       <div class="content">
@@ -102,20 +106,18 @@
         <div class="header" id="header">
           <div class="content-inner">
             <p>I'm</p>
-            <h1>Hulusi Şimşek</h1>
-            <h2>Computer Engineering & Developer</h2>
-            <div class="typed-text">
-              Computer Engineering & Developer, Android Developer, Web
-              Developer, Back End Developer
-            </div>
+            <h1>@ViewBag.Header.Name</h1>
+            <h2></h2>
+            <div class="typed-text">@ViewBag.Header.TypedText</div>
           </div>
         </div>
-        <!-- Header End -->
 
         <!-- Large Button Start -->
         <div class="large-btn">
           <div class="content-inner">
-            <a class="btn" href="#"><i class="fa fa-download"></i>Resume</a>
+            <a class="btn" href="@ViewBag.Header.CvPath"
+              ><i class="fa fa-download"></i>Resume</a
+            >
             <a class="btn" href="#contact"
               ><i class="fa fa-hands-helping"></i>Hire Me</a
             >
@@ -295,49 +297,22 @@
         <div class="service" id="service">
           <div class="content-inner">
             <div class="content-header">
-              <h2>Service</h2>
+              <h2>Services</h2>
             </div>
             <div class="row align-items-center">
+              @foreach (var service in ViewBag.Services) {
               <div class="col-md-6">
                 <div class="srv-col">
-                  <i class="fab fa-android"></i>
-                  <h3>Android Application Development</h3>
-                  <p>
-                    We develop user-friendly and secure Android applications
-                    compatible with the latest technologies.
-                  </p>
+                  <img
+                    src="@service.IconPicturePath"
+                    style="width: 30px; height: 30px"
+                    alt="@service.ServiceName"
+                  />
+                  <h3>@service.ServiceName</h3>
+                  <p>@service.Description</p>
                 </div>
               </div>
-              <div class="col-md-6">
-                <div class="srv-col">
-                  <i class="fas fa-globe"></i>
-                  <h3>Web Application Development</h3>
-                  <p>
-                    We design visually appealing, user-friendly, and
-                    high-performance web applications.
-                  </p>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="srv-col">
-                  <i class="fas fa-desktop"></i>
-                  <h3>Desktop Application Development</h3>
-                  <p>
-                    We develop user-friendly and functional desktop applications
-                    for Windows, macOS, and Linux platforms.
-                  </p>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="srv-col">
-                  <i class="fas fa-laptop"></i>
-                  <h3>Website Development</h3>
-                  <p>
-                    We create SEO-friendly and impressive websites that reflect
-                    your corporate identity.
-                  </p>
-                </div>
-              </div>
+              }
             </div>
           </div>
         </div>
@@ -353,144 +328,45 @@
               <div class="col-lg-12">
                 <ul id="portfolio-flters">
                   <li data-filter="*" class="filter-active">All</li>
-                  <li data-filter=".android">Android</li>
-                  <li data-filter=".web">Web</li>
-                  <li data-filter=".desk">Desktop</li>
+                  @foreach (var category in ViewBag.Category) {
+                  <li data-filter=".@category.CategoryId">@category.Name</li>
+                  }
                 </ul>
               </div>
             </div>
             <div class="row portfolio-container">
-              <div class="col-lg-4 col-md-6 portfolio-item web-des">
+              @foreach (var item in ViewBag.Portfolio) {
+              <div class="col-lg-4 col-md-6 portfolio-item @item.Category">
                 <div class="portfolio-wrap">
                   <figure>
-                    <img src="img/portfolio-1.jpg" class="img-fluid" alt="" />
+                    <img
+                      src="@item.ImageUrl"
+                      class="img-fluid"
+                      alt="@item.ProjectName"
+                    />
                     <a
-                      href="img/portfolio-1.jpg"
-                      data-lightbox="portfolio"
-                      data-title="Project Name"
+                      href="@item.ImageUrl"
                       class="link-preview"
+                      data-lightbox="portfolio"
+                      data-title="@item.ProjectName"
                       title="Preview"
-                      ><i class="fa fa-eye"></i
-                    ></a>
-                    <a href="#" class="link-details" title="More Details"
-                      ><i class="fa fa-link"></i
-                    ></a>
-                    <a class="portfolio-title" href="#"
-                      >Project Name <span>Web Design</span></a
                     >
+                      <i class="fa fa-eye"></i>
+                    </a>
+                    <a
+                      href="posts/details/@item.URL"
+                      class="link-details"
+                      title="More Details"
+                    >
+                      <i class="fa fa-link"></i>
+                    </a>
+                    <a class="portfolio-title" href="#">
+                      @item.ProjectName <span>@item.Category</span>
+                    </a>
                   </figure>
                 </div>
               </div>
-
-              <div class="col-lg-4 col-md-6 portfolio-item web-des">
-                <div class="portfolio-wrap">
-                  <figure>
-                    <img src="img/portfolio-2.jpg" class="img-fluid" alt="" />
-                    <a
-                      href="img/portfolio-2.jpg"
-                      class="link-preview"
-                      data-lightbox="portfolio"
-                      data-title="Project Name"
-                      title="Preview"
-                      ><i class="fa fa-eye"></i
-                    ></a>
-                    <a href="#" class="link-details" title="More Details"
-                      ><i class="fa fa-link"></i
-                    ></a>
-                    <a class="portfolio-title" href="#"
-                      >Project Name <span>Web Design</span></a
-                    >
-                  </figure>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-md-6 portfolio-item web-dev">
-                <div class="portfolio-wrap">
-                  <figure>
-                    <img src="img/portfolio-3.jpg" class="img-fluid" alt="" />
-                    <a
-                      href="img/portfolio-3.jpg"
-                      class="link-preview"
-                      data-lightbox="portfolio"
-                      data-title="Project Name"
-                      title="Preview"
-                      ><i class="fa fa-eye"></i
-                    ></a>
-                    <a href="#" class="link-details" title="More Details"
-                      ><i class="fa fa-link"></i
-                    ></a>
-                    <a class="portfolio-title" href="#"
-                      >Project Name <span>Web Development</span></a
-                    >
-                  </figure>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-md-6 portfolio-item web-dev">
-                <div class="portfolio-wrap">
-                  <figure>
-                    <img src="img/portfolio-4.jpg" class="img-fluid" alt="" />
-                    <a
-                      href="img/portfolio-4.jpg"
-                      class="link-preview"
-                      data-lightbox="portfolio"
-                      data-title="Project Name"
-                      title="Preview"
-                      ><i class="fa fa-eye"></i
-                    ></a>
-                    <a href="#" class="link-details" title="More Details"
-                      ><i class="fa fa-link"></i
-                    ></a>
-                    <a class="portfolio-title" href="#"
-                      >Project Name <span>Web Development</span></a
-                    >
-                  </figure>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-md-6 portfolio-item dig-mar">
-                <div class="portfolio-wrap">
-                  <figure>
-                    <img src="img/portfolio-5.jpg" class="img-fluid" alt="" />
-                    <a
-                      href="img/portfolio-5.jpg"
-                      class="link-preview"
-                      data-lightbox="portfolio"
-                      data-title="Project Name"
-                      title="Preview"
-                      ><i class="fa fa-eye"></i
-                    ></a>
-                    <a href="#" class="link-details" title="More Details"
-                      ><i class="fa fa-link"></i
-                    ></a>
-                    <a class="portfolio-title" href="#"
-                      >Project Name <span>Digital Marketing</span></a
-                    >
-                  </figure>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-md-6 portfolio-item dig-mar">
-                <div class="portfolio-wrap">
-                  <figure>
-                    <img src="img/portfolio-6.jpg" class="img-fluid" alt="" />
-                    <a
-                      href="img/portfolio-6.jpg"
-                      class="link-preview"
-                      data-lightbox="portfolio"
-                      data-title="Project Name"
-                      title="Preview"
-                      ><i class="fa fa-eye"></i
-                    ></a>
-                    <a href="#" class="link-details" title="More Details"
-                      ><i class="fa fa-link"></i
-                    ></a>
-                    <a class="portfolio-title" href="#"
-                      >Project Name <span>Digital Marketing</span></a
-                    >
-                  </figure>
-                </div>
-              </div>
+              }
             </div>
           </div>
         </div>
@@ -565,76 +441,56 @@
             <div class="row align-items-center">
               <div class="col-md-6">
                 <div class="contact-info">
-                  <p><i class="fa fa-user"></i>Hulusi Şimşek</p>
-                  <p>
-                    <i class="fa fa-tag"></i>Computer Engineering & Developer
-                  </p>
+                  <p><i class="fa fa-user"></i>@ViewBag.Contact.Name</p>
+                  <p><i class="fa fa-tag"></i>@ViewBag.Contact.Job</p>
                   <p>
                     <i class="fa fa-envelope"></i
-                    ><a href="mailto:info@example.com">info@example.com</a>
+                    ><a href="mailto:@ViewBag.Email">@ViewBag.Contact.Email</a>
                   </p>
-                  <p><i class="fa fa-map-marker"></i>Tekirdağ, Turkey</p>
+                  <p>
+                    <i class="fa fa-map-marker"></i
+                    >@ViewBag.Contact.Localization
+                  </p>
                   <div class="social">
-                    <a
-                      class="btn"
-                      href="https://www.linkedin.com/in/hulusi-%C5%9Fim%C5%9Fek-a01843201/"
-                      ><i class="fab fa-linkedin-in"></i
+                    @foreach (var linkIcon in ViewBag.Contact.LinkIcons) {
+                    <a class="btn" href="@linkIcon.Url"
+                      ><i class="@linkIcon.IconClass"></i
                     ></a>
-                    <a class="btn" href="https://www.instagram.com/hulusimsek/"
-                      ><i class="fab fa-instagram"></i
-                    ></a>
-                    @{ var youtubeUsername = "@YazBilim"; }
-
-                    <a
-                      class="btn"
-                      href="https://www.youtube.com/@youtubeUsername"
-                      ><i class="fab fa-youtube"></i
-                    ></a>
+                    }
                   </div>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form">
-                  <form>
-                    <div class="form-row">
-                      <div class="form-group col-md-6">
-                        <input
-                          type="text"
-                          class="form-control"
-                          placeholder="Your Name"
-                        />
+                  <form asp-action="Contact" method="post">
+                      <div class="form-row">
+                          <div class="form-group col-md-6">
+                              <input asp-for="Name" class="form-control" placeholder="Your Name" />
+                              <span asp-validation-for="Name" class="text-danger"></span>
+                          </div>
+                          <div class="form-group col-md-6">
+                              <input asp-for="Email" class="form-control" placeholder="Your Email" />
+                              <span asp-validation-for="Email" class="text-danger"></span>
+                          </div>
                       </div>
-                      <div class="form-group col-md-6">
-                        <input
-                          type="email"
-                          class="form-control"
-                          placeholder="Your Email"
-                        />
+                      <div class="form-group">
+                          <input asp-for="Subject" class="form-control" placeholder="Subject" />
+                          <span asp-validation-for="Subject" class="text-danger"></span>
                       </div>
-                    </div>
-                    <div class="form-group">
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Subject"
-                      />
-                    </div>
-                    <div class="form-group">
-                      <textarea
-                        class="form-control"
-                        rows="5"
-                        placeholder="Message"
-                      ></textarea>
-                    </div>
-                    <div>
-                      <button class="btn" type="submit">Send Message</button>
-                    </div>
+                      <div class="form-group">
+                          <textarea asp-for="Message" class="form-control" rows="5" placeholder="Message"></textarea>
+                          <span asp-validation-for="Message" class="text-danger"></span>
+                      </div>
+                      <div>
+                          <button type="submit" class="btn">Send Message</button>
+                      </div>
                   </form>
-                </div>
+              </div>
               </div>
             </div>
           </div>
         </div>
+
         <!-- Contact End -->
 
         <!-- Footer Start -->
@@ -673,5 +529,40 @@
 
     <!-- Template Javascript -->
     <script src="~/js/main.js"></script>
+    <script>
+      $(document).ready(function () {
+        // Form submit olduğunda
+        $("form").submit(function (e) {
+          e.preventDefault(); // Sayfanın yeniden yüklenmesini önle
+
+          // Form verilerini al
+          var formData = {
+            Name: $("#Name").val(),
+            Email: $("#Email").val(),
+            Subject: $("#Subject").val(),
+            Message: $("#Message").val(),
+          };
+
+          // Ajax isteği gönder
+          $.ajax({
+            type: "POST",
+            url: "/Home/Contact", // İsteğin gönderileceği controller action
+            data: formData,
+            success: function (response) {
+              showCustomToast("Mail sent successfully!");
+              setTimeout(function () {
+                window.location.reload();
+                    }, 2000);
+              // Formu temizle veya başka bir işlem yapabilirsiniz
+            },
+            error: function (xhr, status, error) {
+              showCustomToast(
+                "An error occurred while sending mail: " + xhr.responseText
+              );
+            },
+          });
+        });
+      });
+    </script>
   </body>
 </html>

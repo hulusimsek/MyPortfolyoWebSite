@@ -12,8 +12,8 @@ using MyPortfolyoWebSite.Models;
 namespace MyPortfolyoWebSite.Migrations
 {
     [DbContext(typeof(IdentityContext))]
-    [Migration("20240407222715_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20240409093612_InitialCreate2")]
+    partial class InitialCreate2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -254,13 +254,16 @@ namespace MyPortfolyoWebSite.Migrations
                     b.Property<string>("Email")
                         .HasColumnType("longtext");
 
-                    b.Property<string>("Message")
+                    b.Property<string>("Job")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Localization")
                         .HasColumnType("longtext");
 
                     b.Property<string>("Name")
                         .HasColumnType("longtext");
 
-                    b.Property<string>("Subject")
+                    b.Property<string>("Telephone")
                         .HasColumnType("longtext");
 
                     b.HasKey("ContactId");
@@ -327,6 +330,31 @@ namespace MyPortfolyoWebSite.Migrations
                     b.ToTable("Experiences");
                 });
 
+            modelBuilder.Entity("MyPortfolyoWebSite.Entity.Header", b =>
+                {
+                    b.Property<int>("HeaderId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("HeaderId"));
+
+                    b.Property<string>("CvPath")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("ProfilePicturePath")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("TypedText")
+                        .HasColumnType("longtext");
+
+                    b.HasKey("HeaderId");
+
+                    b.ToTable("Header");
+                });
+
             modelBuilder.Entity("MyPortfolyoWebSite.Entity.Portfolio", b =>
                 {
                     b.Property<int>("PortfolioId")
@@ -361,6 +389,9 @@ namespace MyPortfolyoWebSite.Migrations
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("ServiceId"));
 
                     b.Property<string>("Description")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("IconPicturePath")
                         .HasColumnType("longtext");
 
                     b.Property<string>("ServiceName")

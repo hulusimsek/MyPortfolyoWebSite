@@ -10,5 +10,6 @@ namespace MyPortfolyoWebSite.Entity
         public int ServiceId { get; set; }
         public string? ServiceName { get; set; }
         public string? Description { get; set; }
+        public string? IconPicturePath { get; set; }
     }
 }

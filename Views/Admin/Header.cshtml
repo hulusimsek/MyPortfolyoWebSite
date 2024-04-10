@@ -1,0 +1,52 @@
+@model Header
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="bg-white p-4">
+                <h1>Header</h1>
+                <form id="headerForm" asp-action="Header" asp-controller="Admin" method="post" enctype="multipart/form-data">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="mb-3">
+                        <input type="hidden" asp-for="HeaderId" />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Name" class="form-label"></label>
+                        <input asp-for="Name" class="form-control" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="TypedText" class="form-label"></label>
+                        <input asp-for="TypedText" class="form-control" />
+                        <span asp-validation-for="TypedText" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3"> 
+                        <img
+                          id="previewImage"
+                          src="/img/profile.png"
+                          alt="Varsayılan Resim"
+                          width="200"
+                          height="200"
+                        /></div>
+                        <div class="mb-3">
+                        <label for="imageFile" class="form-label">Resim: </label>
+                        <input
+                          type="file"
+                          name="imageFile"
+                          id="imageFile"
+                          class="form-control"
+                          value="/img/profile.png"
+                          onchange="previewFile(this)"
+                        />
+                      </div>
+                    <div class="mb-3">
+                        <label asp-for="CvPath" class="form-label"></label>
+                        <input type="file" name="CvPath" id="CvPath" class="form-control" />
+                        <span asp-validation-for="CvPath" class="text-danger"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

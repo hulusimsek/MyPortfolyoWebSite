@@ -240,6 +240,25 @@ namespace MyPortfolyoWebSite.Migrations
                     b.ToTable("AboutMe");
                 });
 
+            modelBuilder.Entity("MyPortfolyoWebSite.Entity.Category", b =>
+                {
+                    b.Property<int>("CategoryId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("CategoryId"));
+
+                    b.Property<string>("Description")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("longtext");
+
+                    b.HasKey("CategoryId");
+
+                    b.ToTable("Categories");
+                });
+
             modelBuilder.Entity("MyPortfolyoWebSite.Entity.Contact", b =>
                 {
                     b.Property<int>("ContactId")
@@ -251,13 +270,16 @@ namespace MyPortfolyoWebSite.Migrations
                     b.Property<string>("Email")
                         .HasColumnType("longtext");
 
-                    b.Property<string>("Message")
+                    b.Property<string>("Job")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Localization")
                         .HasColumnType("longtext");
 
                     b.Property<string>("Name")
                         .HasColumnType("longtext");
 
-                    b.Property<string>("Subject")
+                    b.Property<string>("Telephone")
                         .HasColumnType("longtext");
 
                     b.HasKey("ContactId");
@@ -324,6 +346,83 @@ namespace MyPortfolyoWebSite.Migrations
                     b.ToTable("Experiences");
                 });
 
+            modelBuilder.Entity("MyPortfolyoWebSite.Entity.Header", b =>
+                {
+                    b.Property<int>("HeaderId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("HeaderId"));
+
+                    b.Property<string>("CvPath")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("ProfilePicturePath")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("TypedText")
+                        .HasColumnType("longtext");
+
+                    b.HasKey("HeaderId");
+
+                    b.ToTable("Header");
+                });
+
+            modelBuilder.Entity("MyPortfolyoWebSite.Entity.LinkIcon", b =>
+                {
+                    b.Property<int>("LinkIconId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("LinkIconId"));
+
+                    b.Property<int?>("ContactId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("IconClass")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Url")
+                        .HasColumnType("longtext");
+
+                    b.HasKey("LinkIconId");
+
+                    b.HasIndex("ContactId");
+
+                    b.ToTable("LinkIcons");
+                });
+
+            modelBuilder.Entity("MyPortfolyoWebSite.Entity.Messages", b =>
+                {
+                    b.Property<int>("MessagesId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("MessagesId"));
+
+                    b.Property<string>("Email")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Message")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Subject")
+                        .HasColumnType("longtext");
+
+                    b.HasKey("MessagesId");
+
+                    b.ToTable("Messages");
+                });
+
             modelBuilder.Entity("MyPortfolyoWebSite.Entity.Portfolio", b =>
                 {
                     b.Property<int>("PortfolioId")
@@ -344,6 +443,9 @@ namespace MyPortfolyoWebSite.Migrations
                     b.Property<string>("ProjectName")
                         .HasColumnType("longtext");
 
+                    b.Property<string>("URL")
+                        .HasColumnType("longtext");
+
                     b.HasKey("PortfolioId");
 
                     b.ToTable("Portfolios");
@@ -358,6 +460,9 @@ namespace MyPortfolyoWebSite.Migrations
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("ServiceId"));
 
                     b.Property<string>("Description")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("IconPicturePath")
                         .HasColumnType("longtext");
 
                     b.Property<string>("ServiceName")
@@ -443,6 +548,13 @@ namespace MyPortfolyoWebSite.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("MyPortfolyoWebSite.Entity.LinkIcon", b =>
+                {
+                    b.HasOne("MyPortfolyoWebSite.Entity.Contact", null)
+                        .WithMany("LinkIcons")
+                        .HasForeignKey("ContactId");
+                });
+
             modelBuilder.Entity("MyPortfolyoWebSite.Entity.Skill", b =>
                 {
                     b.HasOne("MyPortfolyoWebSite.Entity.AboutMe", null)
@@ -453,6 +565,11 @@ namespace MyPortfolyoWebSite.Migrations
             modelBuilder.Entity("MyPortfolyoWebSite.Entity.AboutMe", b =>
                 {
                     b.Navigation("Skills");
+                });
+
+            modelBuilder.Entity("MyPortfolyoWebSite.Entity.Contact", b =>
+                {
+                    b.Navigation("LinkIcons");
                 });
 #pragma warning restore 612, 618
         }

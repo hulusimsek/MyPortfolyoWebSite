@@ -1,0 +1,160 @@
+@model Contact
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="bg-white p-4">
+        <h1>Contact</h1>
+        <form
+          id="contactForm"
+          asp-action="Contact"
+          asp-controller="Admin"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+          <div class="mb-3">
+            <input type="hidden" asp-for="ContactId" />
+          </div>
+          <div class="mb-3">
+            <label asp-for="Name" class="form-label"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+          </div>
+          <div class="mb-3">
+            <label asp-for="Job" class="form-label"></label>
+            <input asp-for="Job" class="form-control" />
+            <span asp-validation-for="Job" class="text-danger"></span>
+          </div>
+          <div class="mb-3">
+            <label asp-for="Email" class="form-label"></label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+          </div>
+          <div class="mb-3">
+            <label asp-for="Telephone" class="form-label"></label>
+            <input asp-for="Telephone" class="form-control" />
+            <span asp-validation-for="Telephone" class="text-danger"></span>
+          </div>
+          <div class="mb-3">
+            <label asp-for="Localization" class="form-label"></label>
+            <input asp-for="Localization" class="form-control" />
+            <span asp-validation-for="Localization" class="text-danger"></span>
+          </div>
+          <div id="linkIconsContainer">
+            <h3>Link Icons:</h3>
+            <!-- Mevcut link ikonları -->
+            @if (Model.LinkIcons != null) { for (var i = 0; i <
+            Model.LinkIcons.Count; i++) {
+            <div class="link-icon-item mb-3">
+              <input
+                type="hidden"
+                name="linkIcons[@i].LinkIconId"
+                value="@Model.LinkIcons[i].LinkIconId"
+              />
+              <label>Icon Name:</label>
+              <input
+                type="text"
+                name="linkIcons[@i].Name"
+                value="@Model.LinkIcons[i].Name"
+                class="form-control"
+              />
+              <label>Icon Class:</label>
+              <input
+                type="text"
+                name="linkIcons[@i].IconClass"
+                value="@Model.LinkIcons[i].IconClass"
+                class="form-control"
+              />
+              <label>Icon URL:</label>
+              <input
+                type="text"
+                name="linkIcons[@i].Url"
+                value="@Model.LinkIcons[i].Url"
+                class="form-control"
+              />
+              <button
+                type="button"
+                onclick="removeLinkIcon(this)"
+                class="btn btn-danger"
+              >
+                Remove
+              </button>
+            </div>
+            } }
+          </div>
+          <button type="button" onclick="addLinkIcon()" class="btn btn-primary">
+            Add Link Icon
+          </button>
+          <div id="deletedLinkIconsContainer">
+            <!-- Silinen link ikonları burada görünecek -->
+          </div>
+          <button id="saveButton" type="submit" class="btn btn-primary">
+            Save
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  function addLinkIcon() {
+    var container = document.getElementById("linkIconsContainer");
+    var linkIconIndex = container.querySelectorAll(".link-icon-item").length;
+
+    var linkIconField = `
+      <div class="link-icon-item mb-3">
+        <input type="hidden" name="linkIcons[${linkIconIndex}].LinkIconId" value="0" />
+        <label>Icon Name:</label>
+        <input type="text" name="linkIcons[${linkIconIndex}].Name" class="form-control" />
+        <label>Icon Class:</label>
+        <input type="text" name="linkIcons[${linkIconIndex}].IconClass" class="form-control" />
+        <label>Icon URL:</label>
+        <input type="text" name="linkIcons[${linkIconIndex}].Url" class="form-control" />
+        <button type="button" onclick="removeLinkIcon(this)" class="btn btn-danger">Remove</button>
+      </div>
+    `;
+
+    container.insertAdjacentHTML("beforeend", linkIconField);
+  }
+
+  function removeLinkIcon(button) {
+    // Link ikonunun bulunduğu div elementini bul
+    var linkIconItem = button.closest(".link-icon-item");
+
+    // Eğer link ikonu yeni eklenmişse, sadece DOM'dan kaldır
+    if (
+      linkIconItem.querySelector(
+        'input[name^="linkIcons"][name$=".LinkIconId"][value="0"]'
+      )
+    ) {
+      linkIconItem.remove();
+      return;
+    }
+
+    // Silinecek link ikonunun ID'sini al
+    var linkIconId = linkIconItem.querySelector(
+      'input[name$=".LinkIconId"]'
+    ).value;
+
+    // AJAX isteği yaparak link ikonunu sil
+    $.ajax({
+      url: "/Admin/RemoveLinkIcon",
+      type: "POST",
+      data: { linkIconId: linkIconId },
+      success: function (response) {
+        // Başarılı yanıt alındığında yapılacak işlemler
+        console.log("Link icon removed successfully.");
+        // Silinen link ikonunu DOM'dan kaldır
+        linkIconItem.remove();
+        // Bildirim göster
+        showCustomToast("Link icon removed successfully.");
+      },
+      error: function (xhr, status, error) {
+        // Hata durumunda yapılacak işlemler
+        console.error("Error while removing link icon:", xhr.responseText);
+      },
+    });
+  }
+</script>

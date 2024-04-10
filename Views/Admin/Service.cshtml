@@ -1,0 +1,67 @@
+@model List<Service>
+
+    <div class="container">
+        <div class="service" id="service">
+            <div class="content-inner">
+                <div class="content-header">
+                    <h2>Services</h2>
+                </div>
+                @Html.AntiForgeryToken()
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Service Name</th>
+                                    <th>Description</th>
+                                    <th>Icon Picture</th>
+                                    <th style="width: 150px;"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var service in Model)
+                                {
+                                    <tr>
+                                        <td>@service.ServiceId</td>
+                                        <td>@service.ServiceName</td>
+                                        <td>@service.Description</td>
+                                        <td>
+                                            <img style="width: 50px;" src="@service.IconPicturePath" alt="Icon Picture" />
+                                        </td>
+                                        <td>
+                                            <a href="@Url.Action("ServiceEdit", "Admin", new { id = service.ServiceId })" class="btn btn-primary">Edit</a>
+                                            <a href="#" class="btn btn-danger delete-service" data-id="@service.ServiceId">Delete</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <a href="@Url.Action("ServiceCreate", "Admin")" class="btn btn-success">Add New Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    @section Scripts {
+        <script>
+            $(".delete-service").click(function () {
+    var serviceId = $(this).data("id");
+    $.ajax({
+        url: "/Admin/ServiceDelete/" + serviceId,
+        type: "POST", // DELETE yerine POST kullanın
+        data: { id: serviceId }, // İsteğe parametre ekleyin
+        success: function (response) {
+            console.log(response);
+            // Sayfayı yenile
+            window.location.reload();
+        },
+        error: function (xhr, status, error) {
+            console.error(xhr.responseText);
+            alert("An error occurred while deleting service.");
+        }
+    });
+});
+        </script>
+    }

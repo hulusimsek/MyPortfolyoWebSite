@@ -1,0 +1,37 @@
+@model Portfolio
+<link rel="stylesheet" type="text/css" href="css/style2.css">
+<div class="about_section layout_padding">
+    <div class="container">
+       <div class="row">
+          <div class="col-lg-8 col-sm-12">
+             <div class="about_img"><img  height="400px" src=@Model.ImageUrl></div>
+             <p class="post_text">@Model.Category</p>
+             <h2 class="most_text">@Model.ProjectName</h2>
+             <p class="lorem_text">@Html.Raw(@Model.Description)</p>
+             <div class="social_icon_main">
+                <div class="social_icon">
+                   <ul>
+                      <li><a href="#"><img src="images/fb-icon.png"></a></li>
+                      <li><a href="#"><img src="images/twitter-icon.png"></a></li>
+                      <li><a href="#"><img src="images/instagram-icon.png"></a></li>
+                   </ul>
+                </div>
+                <div class="read_bt"><a href="/#portfolio">Read More</a></div>
+             </div>
+          </div>
+          <div class="col-lg-4 col-sm-12">
+             <div class="about_main">
+                <h1 class="follow_text">CONNECT & FOLLOW</h1>
+                <div class="follow_icon">
+                   <ul>
+                      <li><a href="#"><img src="images/fb-icon-1.png"></a></li>
+                      <li><a href="#"><img src="images/twitter-icon-1.png"></a></li>
+                      <li><a href="#"><img src="images/linkedin-icon-1.png"></a></li>
+                      <li><a href="#"><img src="images/instagram-icon-1.png"></a></li>
+                   </ul>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>

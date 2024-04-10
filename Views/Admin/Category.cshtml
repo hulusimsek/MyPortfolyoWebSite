@@ -1,0 +1,103 @@
+@model List<Category>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="bg-white p-4">
+          <h1>Manage Categories</h1>
+          <form
+            id="categoryForm"
+            asp-action="Category"
+            asp-controller="Admin"
+            method="post"
+          >
+            @Html.AntiForgeryToken()
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div id="categoriesContainer">
+              @if (Model != null && Model.Any()) { foreach (var category in
+              Model) {
+              <div class="mb-3">
+                <input
+                  type="hidden"
+                  name="categories[@Model.IndexOf(category)].CategoryId"
+                  value="@category.CategoryId"
+                />
+                <label class="form-label">Category Name:</label>
+                <input
+                  type="text"
+                  name="categories[@Model.IndexOf(category)].Name"
+                  value="@category.Name"
+                  class="form-control"
+                />
+                <button
+                  type="button"
+                  onclick="removeCategoryField(this)"
+                  class="btn btn-danger"
+                >
+                  Remove
+                </button>
+              </div>
+              } }
+            </div>
+            <button
+              type="button"
+              onclick="addCategoryField()"
+              class="btn btn-primary"
+            >
+              Add Category
+            </button>
+            <button type="submit" class="btn btn-success">
+              Save Categories
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  @section Scripts {
+  <script>
+    function addCategoryField() {
+      var container = document.getElementById("categoriesContainer");
+      var newIndex = container.children.length;
+
+      var categoryField = `
+            <div class="mb-3">
+              <input type="hidden" name="categories[${newIndex}].CategoryId" value="0" />
+              <label class="form-label">Category Name:</label>
+              <input type="text" name="categories[${newIndex}].Name" class="form-control" />
+              <button type="button" onclick="removeCategoryField(this)" class="btn btn-danger">Remove</button>
+            </div>
+          `;
+
+      container.insertAdjacentHTML("beforeend", categoryField);
+    }
+
+    function removeCategoryField(button) {
+      var categoryDiv = button.parentElement;
+      var categoryId = categoryDiv.querySelector(
+        'input[name$=".CategoryId"]'
+      ).value;
+
+      // AJAX isteği yaparak kategoriyi sil
+      $.ajax({
+        url: "/Admin/RemoveCategory",
+        type: "POST",
+        data: { categoryId: categoryId },
+        success: function (response) {
+          // Başarılı yanıt alındığında yapılacak işlemler
+          console.log("Category removed successfully.");
+          // Silinen kategoriyi DOM'dan kaldır
+          categoryDiv.remove();
+          // Bildirim göster
+          showCustomToast("Category removed successfully.");
+        },
+        error: function (xhr, status, error) {
+          // Hata durumunda yapılacak işlemler
+          console.error("Error while removing category:", xhr.responseText);
+        },
+      });
+    }
+  </script>
+
+  }
+</Category>

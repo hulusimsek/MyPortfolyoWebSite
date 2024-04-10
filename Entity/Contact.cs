@@ -9,8 +9,10 @@ namespace MyPortfolyoWebSite.Entity
     {
         public int ContactId { get; set; }
         public string? Name { get; set; }
+        public string? Job { get; set; }
         public string? Email { get; set; }
-        public string? Subject { get; set; }
-        public string? Message { get; set; }
+        public string? Telephone { get; set; }
+        public string? Localization { get; set; }
+        public List<LinkIcon> LinkIcons { get; set; } = new();
     }
 }

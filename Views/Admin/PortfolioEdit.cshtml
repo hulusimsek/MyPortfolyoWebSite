@@ -1,0 +1,120 @@
+@model Portfolio
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="bg-white p-4">
+                <h1>Edit Portfolio Item</h1>
+                <form id="portfolioForm" asp-action="PortfolioEdit" asp-controller="Admin" asp-route-id="@Model.PortfolioId" method="post" enctype="multipart/form-data">
+                    @Html.AntiForgeryToken()
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="mb-3">
+                        <input type="hidden" asp-for="PortfolioId" />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="ProjectName" class="form-label"></label>
+                        <input asp-for="ProjectName" class="form-control" />
+                        <span asp-validation-for="ProjectName" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Category" class="form-label">Category:</label>
+                        <div class="input-group">
+                            <select asp-for="Category" class="form-control">
+                                @if (ViewBag.Categories != null && ViewBag.Categories is IEnumerable<SelectListItem>)
+                                {
+                                    foreach (var category in ViewBag.Categories)
+                                    {
+                                        <option value="@category.Value">@category.Text</option>
+                                    }
+                                }
+                            </select>
+                          <a asp-action="Category" type="button" class="btn btn-success">Add New</a>
+                        </div>
+                        <span asp-validation-for="Category" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="URL" class="form-label"></label>
+                        <input asp-for="URL" class="form-control" />
+                        <span asp-validation-for="URL" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Description" class="form-label"></label>
+                        <textarea asp-for="Description" class="form-control" rows="5"></textarea>
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3" style="width: 100px;">
+                        <img id="previewImage" style="width: 150px;" src="@Model.ImageUrl" alt="">
+                      </div>
+                      <div class="mb-3">
+                        <label for="imageFile" class="form-label">Resim: </label>
+                        <input
+                          type="file"
+                          name="imageFile"
+                          id="imageFile"
+                          class="form-control"
+                          onchange="previewFile(this)"
+                        />
+                      </div>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/6.7.0/tinymce.min.js"></script>
+    <script>
+        tinymce.init({
+            selector: '#Description'
+        });
+    </script>
+
+    <script>
+        function previewFile(input) {
+        var file = input.files[0];
+        var reader = new FileReader();
+
+        reader.onloadend = function () {
+            $("#previewImage").attr("src", reader.result);
+        };
+
+        if (file) {
+            reader.readAsDataURL(file);
+        } else {
+            $("#previewImage").attr("src", "");
+        }
+    }
+    $(document).ready(function () {
+    $("#portfolioForm").submit(function (e) {
+        e.preventDefault(); // Formun normal submit işlemini engelle
+
+        // FormData nesnesini oluştur
+        var formData = new FormData(this);
+
+        $.ajax({
+            type: "POST",
+            url: $(this).attr("action"),
+            data: formData,
+            processData: false, // Veriyi işlemeye gerek yok
+            contentType: false, // Dosya yükleme olduğu için içerik türünü belirtme
+            success: function (response) {
+                // Başarılı yanıt alındığında yapılacak işlemler
+                console.log(response);
+                showCustomToast("Portfolio item successfully updated.");
+                // Sayfayı yenile
+                setTimeout(function () {
+                    window.location.href = "/Admin/Portfolio";
+                }, 2000);
+            },
+            error: function (xhr, status, error) {
+                // Hata durumunda yapılacak işlemler
+                console.error(xhr.responseText);
+                alert("An error occurred while updating portfolio item.");
+            }
+        });
+    });
+});
+    </script>
+}

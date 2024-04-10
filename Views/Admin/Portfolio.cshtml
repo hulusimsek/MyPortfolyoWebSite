@@ -1,0 +1,54 @@
+@model List<Portfolio>
+
+    <div class="container">
+        <div class="portfolio" id="portfolio">
+            <div class="content-inner">
+                <div class="content-header">
+                    <h2>Portfolio</h2>
+                </div>
+                <div class="row">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-md-4">
+                            <div class="card">
+                                <img style="width: 100px;" src="@item.ImageUrl" class="card-img-top" alt="@item.ProjectName">
+                                <div class="card-body">
+                                    <h5 class="card-title">@item.ProjectName</h5>
+                                    <p class="card-text">@Html.Raw(@item.Description)</p>
+                                    <a href="@item.URL" class="btn btn-primary">Visit Site</a>
+                                    <a href="@Url.Action("PortfolioEdit", "Admin", new { id = item.PortfolioId })" class="btn btn-secondary">Edit</a>
+                                    <a class="btn btn-danger deletePortfolio" data-portfolio-id="@item.PortfolioId">Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+                <a href="@Url.Action("PortfolioCreate", "Admin")" class="btn btn-success">Add New Portfolio</a>
+            </div>
+        </div>
+    </div>
+    @section Scripts {
+    <script>
+    $(document).ready(function () {
+            // Sil butonuna tıklama işlemi
+            $(".deletePortfolio").click(function () {
+                var portfolioId = $(this).data("portfolio-id"); // Silinecek portföyün ID'sini al
+                if (confirm("Bu portföyü silmek istediğinizden emin misiniz?")) { // Kullanıcıya onay sor
+                    $.ajax({
+                        type: "POST",
+                        url: "/Admin/PortfolioDelete", // Action metodu uygun şekilde güncellendi
+                        data: { id: portfolioId }, // Silinecek portföyün ID'sini gönder
+                        success: function () {
+                            // Başarılı silme durumunda sayfayı yenile
+                            location.reload();
+                        },
+                        error: function (xhr, status, error) {
+                            // Hata durumunda hatayı konsola yaz
+                            console.error(xhr.responseText);
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+    }
