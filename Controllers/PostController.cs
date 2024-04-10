@@ -24,6 +24,7 @@ namespace BlogAppProjesi.Controllers
         public async Task<IActionResult> Details(string url)
         {
             ViewBag.NewPosts = await _context.Portfolios.OrderByDescending(p=>p.PortfolioId).Take(5).ToListAsync();
+            ViewBag.Contacts = await _context.Contacts.Include(x=>x.LinkIcons).FirstOrDefaultAsync();
             return View(
                 await _context
                         .Portfolios

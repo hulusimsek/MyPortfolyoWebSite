@@ -1,37 +1,56 @@
 @model Portfolio
-<link rel="stylesheet" type="text/css" href="css/style2.css">
+<link rel="stylesheet" type="text/css" href="css/style2.css" />
 <div class="about_section layout_padding">
-    <div class="container">
-       <div class="row">
-          <div class="col-lg-8 col-sm-12">
-             <div class="about_img"><img  height="400px" src=@Model.ImageUrl></div>
-             <p class="post_text">@Model.Category</p>
-             <h2 class="most_text">@Model.ProjectName</h2>
-             <p class="lorem_text">@Html.Raw(@Model.Description)</p>
-             <div class="social_icon_main">
-                <div class="social_icon">
-                   <ul>
-                      <li><a href="#"><img src="images/fb-icon.png"></a></li>
-                      <li><a href="#"><img src="images/twitter-icon.png"></a></li>
-                      <li><a href="#"><img src="images/instagram-icon.png"></a></li>
-                   </ul>
-                </div>
-                <div class="read_bt"><a href="/#portfolio">Read More</a></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-sm-12">
+        <div class="about_img" style="text-align: center">
+          <img
+            height="400px"
+            src="@Model.ImageUrl"
+            style="display: inline-block"
+          />
+        </div>
+        <div class="m-4 ps-4">
+         <p class="post_text">@Model.Category</p>
+         <h2 class="most_text">@Model.ProjectName</h2>
+         <p class="lorem_text">@Html.Raw(@Model.Description)</p>
+     </div>
+        <div class="social_icon_main">
+          <div class="btn btn-info"><a href="/#portfolio">Read More</a></div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-12">
+         <div class="card mb-2">
+             <div class="card-header">
+                 <h5 class="card-title mb-0">New Projects</h5>
              </div>
-          </div>
-          <div class="col-lg-4 col-sm-12">
-             <div class="about_main">
-                <h1 class="follow_text">CONNECT & FOLLOW</h1>
-                <div class="follow_icon">
-                   <ul>
-                      <li><a href="#"><img src="images/fb-icon-1.png"></a></li>
-                      <li><a href="#"><img src="images/twitter-icon-1.png"></a></li>
-                      <li><a href="#"><img src="images/linkedin-icon-1.png"></a></li>
-                      <li><a href="#"><img src="images/instagram-icon-1.png"></a></li>
-                   </ul>
-                </div>
-             </div>
-          </div>
-       </div>
+             <div class="card-body">
+               @foreach(var post in ViewBag.NewPosts) {
+               <div class="mb-3">
+                   <div class="d-flex align-items-center">
+                       <img style="width: 150px" src="@post.ImageUrl" alt="" />
+                       <h6 class="ml-3 mb-0">@post.ProjectName</h6>
+                   </div>
+                   <a class="btn btn-info mt-2" href="/posts/details/@post.URL">See Details</a>
+               </div>
+               }
+           </div>
+         </div>
+     
+         <div class="social mt-4">
+            <div class="badge">Follow Me!</div>
+            @foreach (var linkIcon in ViewBag.Contacts.LinkIcons) {
+                <a class="btn" href="@linkIcon.Url"><i style="font-size: 48px;" class="@linkIcon.IconClass"></i></a>
+            }
+        </div>
+     </div>
+     
     </div>
- </div>
+  </div>
+</div>
+<style>
+  .container {
+    background-color: white;
+  }
+</style>
