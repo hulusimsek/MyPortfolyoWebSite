@@ -200,12 +200,14 @@ namespace AkilliFiyatWeb.Services
 									string productName = product["product"]["name"].ToString();
 
 									// İndirimli fiyatı al
-									float discountedPrice = float.Parse(product["prices"]["discounted"]["value"].ToString());
-									float eskiFiyat = float.Parse(product["prices"]["original"]["value"].ToString());
+									Double discountedPrice = Double.Parse(product["prices"]["discounted"]["value"].ToString().Replace('.', '#').Replace(',', '.').Replace('#', ','));
+									Double eskiFiyat = Double.Parse(product["prices"]["original"]["value"].ToString().Replace('.', '#').Replace(',', '.').Replace('#', ','));
 									// Resim URL'sini al
 									string imageHost = product["product"]["images"][0]["host"].ToString();
 									string imagePath = product["product"]["images"][0]["path"].ToString();
 									string imageUrl = $"{imageHost}/{imagePath}";
+
+									Double indirimOrani = ((Convert.ToDouble(eskiFiyat) - Convert.ToDouble(discountedPrice)) / Convert.ToDouble(eskiFiyat)) * 100;
 
 									// Ürün bilgilerini listeye ekle
 									All_Products sokProduct2 = new All_Products
@@ -215,7 +217,9 @@ namespace AkilliFiyatWeb.Services
 										EskiFiyat = Convert.ToString(eskiFiyat),
 										UrunResmi = imageUrl,
 										MarketAdi = "Şok",
+										IndirimOran = indirimOrani,
 										MarketResmi = "/img/Sok.png"
+
 									};
 									allSokProducts.Add(sokProduct2);
 								}

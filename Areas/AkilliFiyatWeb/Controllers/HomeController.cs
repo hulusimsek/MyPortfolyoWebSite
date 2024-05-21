@@ -106,7 +106,7 @@ public class HomeController : Controller
     {
         try
         {
-            var test = await _a101IndirimServices.GetA101AllProductsAsync();
+            var test = await _migrosIndirimUrunServices.GetAllMigrosProducts();
             string jsonResult = JsonConvert.SerializeObject(test);
 
             return Content(jsonResult, "application/json");

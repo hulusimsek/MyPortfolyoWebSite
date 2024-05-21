@@ -206,7 +206,10 @@ namespace AkilliFiyatWeb.Services
 		public async Task<List<All_Products>> GetA101AllProductsAsync()
 		{
 			List<All_Products> allProductsA101 = new List<All_Products>();
-			string[] categories = { "sut-urunleri-kahvaltilik"};
+			string[] categories = { "sut-urunleri-kahvaltilik", "meyve-sebze", "et-balik-tavuk", "firindan",
+			"temel-gida", "atistirmalik", "icecek", "donuk-hazir-yemek-meze", "tatli", "dondurma",
+			"temizlik-urunleri", "kisisel-bakim", "kagit-urunleri", "elektronik", "anne-bebek", "ev-yasam",
+			"kitap-kirtasiye-oyuncak", "evcil-hayvan", "bayram"};
 
 			using (HttpClientHandler handler = new HttpClientHandler())
 			{
@@ -283,10 +286,14 @@ namespace AkilliFiyatWeb.Services
 										{
 											var attributes = product["attributes"];
 											string productName = attributes["name"].ToString();
-											string discountedPrice = product["price"]["discountedStr"].ToString().Replace("₺", "");
-											string normalPrice = product["price"]["normalStr"].ToString().Replace("₺", "");
+											string discountedPrice = product["price"]["discountedStr"].ToString()
+																.Replace("₺", "").Replace('.', '#').Replace(',', '.').Replace('#', ',');
+											string normalPrice = product["price"]["normalStr"].ToString().
+																Replace("₺", "").Replace('.', '#').Replace(',', '.').Replace('#', ',');
 											var imageArray = product["images"] as JArray;
 											string imageURL = GetImageURL(imageArray);
+											Double indirimOrani = ((Convert.ToDouble(normalPrice) - Convert.ToDouble(discountedPrice)) / Convert.ToDouble(normalPrice)) * 100;
+
 
 											All_Products a101Product = new All_Products
 											{
@@ -295,7 +302,8 @@ namespace AkilliFiyatWeb.Services
 												EskiFiyat = normalPrice,
 												UrunResmi = imageURL,
 												MarketAdi = "A-101",
-												MarketResmi = "/img/A101.png"
+												MarketResmi = "/img/A101.png",
+												IndirimOran = indirimOrani,
 											};
 											allProductsA101.Add(a101Product);
 										}

@@ -1,3 +1,4 @@
+using MyPortfolyoWebSite.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -71,6 +72,36 @@ namespace AkilliFiyatWeb.Services
                 }
             }
         }
+
+		public async Task<string?> MigrosApiAllProductAsync(string category, int i)
+		{
+			// API endpoint'i
+			var apiUrl = (i == 1) ? $"https://www.migros.com.tr/rest/search/screens/{category}" :
+											 $"https://www.migros.com.tr/rest/search/screens/{category}?sayfa={i}&sirala=onerilenler";
+
+			// HttpClient oluştur
+			using (HttpClient client = new HttpClient())
+			{
+				// User-Agent bilgisini belirle
+				client.DefaultRequestHeaders.UserAgent.ParseAdd("MyCustomUserAgent/1.0");
+
+				// API'den veri al
+				var response = await client.GetAsync(apiUrl);
+
+				// Yanıtın içeriğini string olarak al
+				if (response.IsSuccessStatusCode)
+				{
+					return await response.Content.ReadAsStringAsync();
+				}
+				else
+				{
+					// Yanıt başarısızsa hata kodunu yazdır
+					Console.WriteLine($"HTTP isteği başarısız oldu: {response.StatusCode}");
+					// Yanıt başarısızsa null dön
+					return null;
+				}
+			}
+		}
 
 		public async Task<string?> A101ApiAsync(string searchTerm, string reid, string pn)
 		{

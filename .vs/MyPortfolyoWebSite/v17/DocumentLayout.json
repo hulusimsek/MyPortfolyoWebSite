@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\Hulusi\\Desktop\\hulusimsek.com\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0C90EF92-4537-478A-9142-3C6C87D4BE9A}|MyPortfolyoWebSite.csproj|c:\\users\\hulusi\\desktop\\hulusimsek.com\\areas\\akillifiyatweb\\services\\carfoursaindirimurunservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C90EF92-4537-478A-9142-3C6C87D4BE9A}|MyPortfolyoWebSite.csproj|solutionrelative:areas\\akillifiyatweb\\services\\carfoursaindirimurunservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0C90EF92-4537-478A-9142-3C6C87D4BE9A}|MyPortfolyoWebSite.csproj|c:\\users\\hulusi\\desktop\\hulusimsek.com\\areas\\akillifiyatweb\\services\\migrosindirimurunservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C90EF92-4537-478A-9142-3C6C87D4BE9A}|MyPortfolyoWebSite.csproj|solutionrelative:areas\\akillifiyatweb\\services\\migrosindirimurunservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0C90EF92-4537-478A-9142-3C6C87D4BE9A}|MyPortfolyoWebSite.csproj|c:\\users\\hulusi\\desktop\\hulusimsek.com\\areas\\akillifiyatweb\\services\\a101indirimurunservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0C90EF92-4537-478A-9142-3C6C87D4BE9A}|MyPortfolyoWebSite.csproj|solutionrelative:areas\\akillifiyatweb\\services\\a101indirimurunservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0C90EF92-4537-478A-9142-3C6C87D4BE9A}|MyPortfolyoWebSite.csproj|c:\\users\\hulusi\\desktop\\hulusimsek.com\\areas\\akillifiyatweb\\services\\sokurunservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0C90EF92-4537-478A-9142-3C6C87D4BE9A}|MyPortfolyoWebSite.csproj|solutionrelative:areas\\akillifiyatweb\\services\\sokurunservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0C90EF92-4537-478A-9142-3C6C87D4BE9A}|MyPortfolyoWebSite.csproj|c:\\users\\hulusi\\desktop\\hulusimsek.com\\areas\\akillifiyatweb\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C90EF92-4537-478A-9142-3C6C87D4BE9A}|MyPortfolyoWebSite.csproj|solutionrelative:areas\\akillifiyatweb\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0C90EF92-4537-478A-9142-3C6C87D4BE9A}|MyPortfolyoWebSite.csproj|c:\\users\\hulusi\\desktop\\hulusimsek.com\\areas\\akillifiyatweb\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -19,12 +31,12 @@
       "RelativeMoniker": "D:0:0:{0C90EF92-4537-478A-9142-3C6C87D4BE9A}|MyPortfolyoWebSite.csproj|solutionrelative:areas\\akillifiyatweb\\services\\nightlytaskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0C90EF92-4537-478A-9142-3C6C87D4BE9A}|MyPortfolyoWebSite.csproj|c:\\users\\hulusi\\desktop\\hulusimsek.com\\models\\identitycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0C90EF92-4537-478A-9142-3C6C87D4BE9A}|MyPortfolyoWebSite.csproj|solutionrelative:models\\identitycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0C90EF92-4537-478A-9142-3C6C87D4BE9A}|MyPortfolyoWebSite.csproj|c:\\users\\hulusi\\desktop\\hulusimsek.com\\areas\\akillifiyatweb\\services\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C90EF92-4537-478A-9142-3C6C87D4BE9A}|MyPortfolyoWebSite.csproj|solutionrelative:areas\\akillifiyatweb\\services\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0C90EF92-4537-478A-9142-3C6C87D4BE9A}|MyPortfolyoWebSite.csproj|c:\\users\\hulusi\\desktop\\hulusimsek.com\\areas\\akillifiyatweb\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0C90EF92-4537-478A-9142-3C6C87D4BE9A}|MyPortfolyoWebSite.csproj|solutionrelative:areas\\akillifiyatweb\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0C90EF92-4537-478A-9142-3C6C87D4BE9A}|MyPortfolyoWebSite.csproj|c:\\users\\hulusi\\desktop\\hulusimsek.com\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{0C90EF92-4537-478A-9142-3C6C87D4BE9A}|MyPortfolyoWebSite.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,84 +46,124 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "IdentityContext.cs",
-              "DocumentMoniker": "C:\\Users\\Hulusi\\Desktop\\hulusimsek.com\\Models\\IdentityContext.cs",
-              "RelativeDocumentMoniker": "Models\\IdentityContext.cs",
-              "ToolTip": "C:\\Users\\Hulusi\\Desktop\\hulusimsek.com\\Models\\IdentityContext.cs",
-              "RelativeToolTip": "Models\\IdentityContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-20T22:37:57.675Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "NightlyTaskService.cs",
               "DocumentMoniker": "C:\\Users\\Hulusi\\Desktop\\hulusimsek.com\\Areas\\AkilliFiyatWeb\\Services\\NightlyTaskService.cs",
               "RelativeDocumentMoniker": "Areas\\AkilliFiyatWeb\\Services\\NightlyTaskService.cs",
               "ToolTip": "C:\\Users\\Hulusi\\Desktop\\hulusimsek.com\\Areas\\AkilliFiyatWeb\\Services\\NightlyTaskService.cs",
               "RelativeToolTip": "Areas\\AkilliFiyatWeb\\Services\\NightlyTaskService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEgAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-20T22:16:41.024Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "AdminController.cs",
               "DocumentMoniker": "C:\\Users\\Hulusi\\Desktop\\hulusimsek.com\\Areas\\AkilliFiyatWeb\\Controllers\\AdminController.cs",
               "RelativeDocumentMoniker": "Areas\\AkilliFiyatWeb\\Controllers\\AdminController.cs",
               "ToolTip": "C:\\Users\\Hulusi\\Desktop\\hulusimsek.com\\Areas\\AkilliFiyatWeb\\Controllers\\AdminController.cs",
               "RelativeToolTip": "Areas\\AkilliFiyatWeb\\Controllers\\AdminController.cs",
-              "ViewState": "AQIAACoAAAAAAAAAAAAswEIAAAAeAAAA",
+              "ViewState": "AQIAADAAAAAAAAAAAAAswD8AAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-20T22:16:38.409Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "SokUrunServices.cs",
               "DocumentMoniker": "C:\\Users\\Hulusi\\Desktop\\hulusimsek.com\\Areas\\AkilliFiyatWeb\\Services\\SokUrunServices.cs",
               "RelativeDocumentMoniker": "Areas\\AkilliFiyatWeb\\Services\\SokUrunServices.cs",
               "ToolTip": "C:\\Users\\Hulusi\\Desktop\\hulusimsek.com\\Areas\\AkilliFiyatWeb\\Services\\SokUrunServices.cs",
               "RelativeToolTip": "Areas\\AkilliFiyatWeb\\Services\\SokUrunServices.cs",
-              "ViewState": "AQIAAJYAAAAAAAAAAADwv6YAAAB9AAAA",
+              "ViewState": "AQIAAJUAAAAAAAAAAADwv9EAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-20T21:25:06.58Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "A101IndirimUrunServices.cs",
               "DocumentMoniker": "C:\\Users\\Hulusi\\Desktop\\hulusimsek.com\\Areas\\AkilliFiyatWeb\\Services\\A101IndirimUrunServices.cs",
               "RelativeDocumentMoniker": "Areas\\AkilliFiyatWeb\\Services\\A101IndirimUrunServices.cs",
               "ToolTip": "C:\\Users\\Hulusi\\Desktop\\hulusimsek.com\\Areas\\AkilliFiyatWeb\\Services\\A101IndirimUrunServices.cs",
               "RelativeToolTip": "Areas\\AkilliFiyatWeb\\Services\\A101IndirimUrunServices.cs",
-              "ViewState": "AQIAANoAAAAAAAAAAAAQwNAAAAA1AAAA",
+              "ViewState": "AQIAAMUAAAAAAAAAAADgv9MAAAA2AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-21T16:42:04.068Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\Hulusi\\Desktop\\hulusimsek.com\\Areas\\AkilliFiyatWeb\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Areas\\AkilliFiyatWeb\\Controllers\\HomeController.cs",
               "ToolTip": "C:\\Users\\Hulusi\\Desktop\\hulusimsek.com\\Areas\\AkilliFiyatWeb\\Controllers\\HomeController.cs",
               "RelativeToolTip": "Areas\\AkilliFiyatWeb\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAAF4AAAAAAAAAAAArwGwAAABMAAAA",
+              "ViewState": "AQIAAFsAAAAAAAAAAAArwGwAAABMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-20T21:18:06.869Z"
+              "WhenOpened": "2024-05-20T21:18:06.869Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MigrosIndirimUrunServices.cs",
+              "DocumentMoniker": "C:\\Users\\Hulusi\\Desktop\\hulusimsek.com\\Areas\\AkilliFiyatWeb\\Services\\MigrosIndirimUrunServices.cs",
+              "RelativeDocumentMoniker": "Areas\\AkilliFiyatWeb\\Services\\MigrosIndirimUrunServices.cs",
+              "ToolTip": "C:\\Users\\Hulusi\\Desktop\\hulusimsek.com\\Areas\\AkilliFiyatWeb\\Services\\MigrosIndirimUrunServices.cs",
+              "RelativeToolTip": "Areas\\AkilliFiyatWeb\\Services\\MigrosIndirimUrunServices.cs",
+              "ViewState": "AQIAAK8AAAAAAAAAAAAkwL8AAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-21T19:01:27.61Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\Hulusi\\Desktop\\hulusimsek.com\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "appsettings.Development.json",
+              "ToolTip": "C:\\Users\\Hulusi\\Desktop\\hulusimsek.com\\appsettings.Development.json",
+              "RelativeToolTip": "appsettings.Development.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAB+AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-05-21T20:22:01.74Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CarfoursaIndirimUrunServices.cs",
+              "DocumentMoniker": "C:\\Users\\Hulusi\\Desktop\\hulusimsek.com\\Areas\\AkilliFiyatWeb\\Services\\CarfoursaIndirimUrunServices.cs",
+              "RelativeDocumentMoniker": "Areas\\AkilliFiyatWeb\\Services\\CarfoursaIndirimUrunServices.cs",
+              "ToolTip": "C:\\Users\\Hulusi\\Desktop\\hulusimsek.com\\Areas\\AkilliFiyatWeb\\Services\\CarfoursaIndirimUrunServices.cs",
+              "RelativeToolTip": "Areas\\AkilliFiyatWeb\\Services\\CarfoursaIndirimUrunServices.cs",
+              "ViewState": "AQIAAOcAAAAAAAAAAAAAAO4AAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-21T17:52:30.539Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ApiService.cs",
+              "DocumentMoniker": "C:\\Users\\Hulusi\\Desktop\\hulusimsek.com\\Areas\\AkilliFiyatWeb\\Services\\ApiService.cs",
+              "RelativeDocumentMoniker": "Areas\\AkilliFiyatWeb\\Services\\ApiService.cs",
+              "ToolTip": "C:\\Users\\Hulusi\\Desktop\\hulusimsek.com\\Areas\\AkilliFiyatWeb\\Services\\ApiService.cs",
+              "RelativeToolTip": "Areas\\AkilliFiyatWeb\\Services\\ApiService.cs",
+              "ViewState": "AQIAAE4AAAAAAAAAAADwv00AAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-21T20:02:48.965Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -57,9 +57,11 @@ namespace AkilliFiyatWeb.Controllers
 					List<All_Products> tumMarketler = new List<All_Products>();
 					List<All_Products> sok = await sokUrunServisi.GetAllProducts();
 					List<All_Products> a101 = await a101Servisi.GetA101AllProductsAsync();
+					List<All_Products> car = await carfoursaServisi.GetAllProducts();
 
 					tumMarketler.AddRange(sok);
 					tumMarketler.AddRange(a101);
+					tumMarketler.AddRange(car);
 
 
 					// Her bir ürünü eklemeden önce kontrol et
