@@ -49,23 +49,24 @@
     </div>
     
     @section Scripts {
-        <script>
-            $(document).ready(function () {
-                $(".delete-experience").on("click", function () {
-                    var experienceId = $(this).data("id");
-                    
-                    $.ajax({
-                        url: "/Admin/ExperienceDelete/" + experienceId,
-                        type: "DELETE",
-                        success: function () {
-                            location.reload(); // Sayfayı yenile
-                        },
-                        error: function () {
-                            alert("An error occurred while deleting the experience.");
-                        }
-                    });
+    <script>
+        $(document).ready(function () {
+            $(".delete-experience").on("click", function () {
+                var experienceId = $(this).data("id");
+
+                $.ajax({
+                    url: "/Admin/ExperienceDelete/" + experienceId,
+                    type: "POST",
+                    success: function () {
+                        location.reload(); // Sayfayı yenile
+                    },
+                    error: function (xhr, status, error) {
+                        var errorMessage = xhr.status + ': ' + xhr.statusText;
+                        alert("İşlem sırasında bir hata oluştu: " + errorMessage); // Hata mesajını göster
+                    }
                 });
             });
-        </script>
+        });
+    </script>
     }
     

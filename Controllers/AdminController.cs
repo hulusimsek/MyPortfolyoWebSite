@@ -132,10 +132,19 @@ namespace MyPortfolyoWebSite.Controllers
             catch (Exception ex)
             {
                 // Log the exception or handle it appropriately
-                Console.WriteLine($"Error occurred: {ex.ToString()}");
-                // Return an error view or display an error message
-                TempData["ErrorMessage"] = "An error occurred while saving your data.";
-                return View("Error");
+                string errorMessage = ex.Message;
+                string stackTrace = ex.StackTrace ?? "";
+
+                // Hata kaydını veritabanına ekle
+                _context.ErrorLogs.Add(new ErrorLogs
+                {
+                    ErrorMessage = errorMessage,
+                    StackTrace = stackTrace?? ""
+                });
+                await _context.SaveChangesAsync();
+
+                return NotFound();
+
             }
         }
 
@@ -445,7 +454,7 @@ namespace MyPortfolyoWebSite.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        [HttpDelete]
+        [HttpPost]
         public async Task<IActionResult> ExperienceDelete(int id)
         {
             var experience = await _context.Experiences.FindAsync(id);

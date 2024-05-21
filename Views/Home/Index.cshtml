@@ -7,7 +7,7 @@
     </div>
     <div class="sidebar-content">
       <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-        <a href="#" class="navbar-brand">Navigation</a>
+        <a href="#" class="navbar-brand">Menu</a>
         <button
           type="button"
           class="navbar-toggler"
@@ -300,37 +300,44 @@
         </div>
         <div class="row portfolio-container">
           @foreach (var item in ViewBag.Portfolio) {
-          <div class="col-lg-4 col-md-6 portfolio-item @item.Category">
-            <div class="portfolio-wrap">
-              <figure>
-                <img
-                  src="@item.ImageUrl"
-                  class="img-fluid"
-                  alt="@item.ProjectName"
-                />
-                <a
-                  href="@item.ImageUrl"
-                  class="link-preview"
-                  data-lightbox="portfolio"
-                  data-title="@item.ProjectName"
-                  title="Preview"
-                >
-                  <i class="fa fa-eye"></i>
-                </a>
-                <a
-                  href="posts/details/@item.URL"
-                  class="link-details"
-                  title="More Details"
-                >
-                  <i class="fa fa-link"></i>
-                </a>
-                <a class="portfolio-title" href="#">
-                  @item.ProjectName <span>@item.Category</span>
-                </a>
-              </figure>
+            var categoryName = "";
+            foreach (var category in ViewBag.Category) {
+                if (Convert.ToInt32(item.Category) == category.CategoryId) {
+                    categoryName = category.Name;
+                    break;
+                }
+            }
+            <div class="col-lg-4 col-md-6 portfolio-item @item.Category">
+                <div class="portfolio-wrap">
+                    <figure>
+                        <img
+                            src="@item.ImageUrl"
+                            class="img-fluid"
+                            alt="@item.ProjectName"
+                        />
+                        <a
+                            href="@item.ImageUrl"
+                            class="link-preview"
+                            data-lightbox="portfolio"
+                            data-title="@item.ProjectName"
+                            title="Preview"
+                        >
+                            <i class="fa fa-eye"></i>
+                        </a>
+                        <a
+                            href="posts/details/@item.URL"
+                            class="link-details"
+                            title="More Details"
+                        >
+                            <i class="fa fa-link"></i>
+                        </a>
+                        <a class="portfolio-title" href="#">
+                            @item.ProjectName <span>@categoryName</span>
+                        </a>
+                    </figure>
+                </div>
             </div>
-          </div>
-          }
+        }
         </div>
       </div>
     </div>
@@ -462,6 +469,7 @@
                   <span asp-validation-for="Message" class="text-danger"></span>
                 </div>
                 <div>
+                  <div class="g-recaptcha" data-sitekey="6LeFBbgpAAAAAOlIsuEYrYdsibVsPknILwZsHkTc"></div>
                   <button type="submit" class="btn">Send Message</button>
                 </div>
               </form>

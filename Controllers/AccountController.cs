@@ -3,20 +3,20 @@ using MyPortfolyoWebSite.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AkilliFiyatWeb.Controllers
+namespace MyPortfolyoWebSite.Controllers
 {
-    public class AccountController:Controller
+    public class AccountController : Controller
     {
-        private UserManager<IdentityUser> _userManager;
-        private RoleManager<IdentityRole> _roleManager;
-        private SignInManager<IdentityUser> _signInManager;
+        private UserManager<AppUser> _userManager;
+        private RoleManager<AppRole> _roleManager;
+        private SignInManager<AppUser> _signInManager;
         public AccountController(
-            UserManager<IdentityUser> userManager, 
-            RoleManager<IdentityRole> roleManager,
-            SignInManager<IdentityUser> signInManager)
+            UserManager<AppUser> userManager, 
+            RoleManager<AppRole> roleManager,
+            SignInManager<AppUser> signInManager)
         {
             _userManager = userManager;
-            _roleManager = roleManager; 
+            _roleManager = roleManager;
             _signInManager = signInManager;
         }
 

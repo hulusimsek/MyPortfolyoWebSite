@@ -5,7 +5,7 @@ using MyPortfolyoWebSite.Entity;
 
 namespace MyPortfolyoWebSite.Models
 {
-    public class IdentityContext : IdentityDbContext<IdentityUser>
+    public class IdentityContext : IdentityDbContext<AppUser, AppRole, string>
     {
         public IdentityContext(DbContextOptions<IdentityContext> options) : base(options)
         {
@@ -23,6 +23,7 @@ namespace MyPortfolyoWebSite.Models
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<LinkIcon> LinkIcons { get; set; }
         public DbSet<Messages> Messages { get; set; }
+        public DbSet<ErrorLogs> ErrorLogs { get; set; }
     }
 
 }
