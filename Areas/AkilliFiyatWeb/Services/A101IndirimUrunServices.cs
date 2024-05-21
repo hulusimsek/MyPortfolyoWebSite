@@ -203,130 +203,127 @@ namespace AkilliFiyatWeb.Services
 
 
 
-		private static readonly string[] Categories = { "sut-urunleri-kahvaltilik", "meyve-sebze", "et-balik-tavuk", "firindan",
-		"temel-gida", "atistirmalik", "icecek", "donuk-hazir-yemek-meze", "tatli", "dondurma",
-		"temizlik-urunleri", "kisisel-bakim", "kagit-urunleri", "elektronik", "anne-bebek", "ev-yasam",
-		"kitap-kirtasiye-oyuncak", "evcil-hayvan", "bayram" };
-
 		public async Task<List<All_Products>> GetA101AllProductsAsync()
 		{
-			var allProductsA101 = new List<All_Products>();
+			List<All_Products> allProductsA101 = new List<All_Products>();
+			string[] categories = { "sut-urunleri-kahvaltilik"};
 
-			foreach (var category in Categories)
+			using (HttpClientHandler handler = new HttpClientHandler())
 			{
-				try
-				{
-					var url = $"https://www.a101.com.tr/kapida/{category}";
-					var htmlContent = await GetHtmlContentAsync(url);
+				handler.AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate;
+				handler.UseCookies = true;
+				handler.CookieContainer = new CookieContainer();
 
-					if (!string.IsNullOrEmpty(htmlContent))
-					{
-						var htmlDocument = new HtmlDocument();
-						htmlDocument.LoadHtml(htmlContent);
+				// Proxy ayarları (Türkiye lokasyonlu bir proxy kullanın)
+				handler.Proxy = new WebProxy("78.135.66.137:80", false);
+				handler.UseProxy = true;
 
-						var scriptNode = htmlDocument.DocumentNode.SelectSingleNode("//script[@id='__NEXT_DATA__']");
-						if (scriptNode != null)
-						{
-							var json = scriptNode.InnerText;
-							var jsonObject = JObject.Parse(json);
 
-							var allProducts = new JArray();
-							var children = jsonObject["props"]["pageProps"]["productsByCategoryOutput"]["children"] as JArray;
-
-							foreach (var child in children)
-							{
-								var products = child["products"] as JArray;
-								allProducts.Merge(products);
-							}
-
-							foreach (var product in allProducts)
-							{
-								try
-								{
-									var attributes = product["attributes"];
-									var productName = attributes["name"].ToString();
-									var price = product["price"]["discountedStr"].ToString().Replace("₺", "");
-									var image = product["images"] as JArray;
-									var imageURL = GetImageURL(image);
-									var normalPrice = product["price"]["normalStr"].ToString().Replace("₺", "");
-									var normalPriceFloat = float.Parse(normalPrice);
-
-									All_Products a101Product2 = new All_Products
-									{
-										UrunAdi = productName,
-										Fiyat = Convert.ToString(price),
-										UrunResmi = imageURL,
-										MarketAdi = "A-101",
-										MarketResmi = "/img/A101.png"
-									};
-									allProductsA101.Add(a101Product2);
-								}
-								catch (Exception e)
-								{
-									_log.Log("1", $"Hata: {e.Message}"); // Hata loglama
-								}
-							}
-						}
-					}
-				}
-				catch (Exception e)
-				{
-					_log.Log("1", $"Hata: {e.Message}"); // Hata loglama
-				}
-
-				// İstekler arasında rastgele gecikme ekleyerek bot benzeri davranışı azaltın
-				Random rnd = new Random();
-				Thread.Sleep(rnd.Next(1000, 5000));
-			}
-
-			return allProductsA101;
-		}
-
-		private async Task<string> GetHtmlContentAsync(string url)
-		{
-			try
-			{
-				var handler = new HttpClientHandler
-				{
-					AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate,
-					UseCookies = true,
-					CookieContainer = new CookieContainer()
-				};
-
-				// Proxy ayarlarını burada ekleyebilirsiniz
+				// Proxy ayarları (örnek)
 				// handler.Proxy = new WebProxy("http://myproxy:myport", false);
 				// handler.UseProxy = true;
 
-				using (var httpClient = new HttpClient(handler))
+				using (HttpClient client = new HttpClient(handler))
 				{
-					httpClient.DefaultRequestHeaders.Add("User-Agent", GetRandomUserAgent());
-					httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("text/html"));
-					httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/xhtml+xml"));
-					httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/xml", 0.9));
-					httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("image/webp"));
-					httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("*/*", 0.8));
-					httpClient.DefaultRequestHeaders.AcceptEncoding.Add(new StringWithQualityHeaderValue("gzip"));
-					httpClient.DefaultRequestHeaders.AcceptEncoding.Add(new StringWithQualityHeaderValue("deflate"));
-					httpClient.DefaultRequestHeaders.AcceptEncoding.Add(new StringWithQualityHeaderValue("br"));
-					httpClient.DefaultRequestHeaders.Connection.Add("keep-alive");
-					httpClient.DefaultRequestHeaders.CacheControl = new CacheControlHeaderValue
+					foreach (var category in categories)
 					{
-						NoCache = true
-					};
+						for (int i = 1; i <= 1; i++)
+						{
+							try
+							{
+								client.DefaultRequestHeaders.Clear();
+								client.DefaultRequestHeaders.Add("User-Agent", GetRandomUserAgent());
+								client.DefaultRequestHeaders.Add("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8");
+								client.DefaultRequestHeaders.Add("Accept-Encoding", "gzip, deflate, br");
+								client.DefaultRequestHeaders.Add("Connection", "keep-alive");
+								client.DefaultRequestHeaders.Add("Cache-Control", "no-cache");
 
-					// Çerezleri ekleyin (manuel olarak elde edilen)
-					httpClient.DefaultRequestHeaders.Add("Cookie", "your-cookie-value");
 
-					var htmlContent = await httpClient.GetStringAsync(url);
-					return htmlContent;
+								// Çerezleri manuel olarak ayarlama (örnek)
+								client.DefaultRequestHeaders.Add("Cookie", "your-cookie-value");
+
+								string url = $"https://www.a101.com.tr/kapida/{category}/?page={i}";
+								HttpResponseMessage response = await client.GetAsync(url);
+
+								if (response.StatusCode == HttpStatusCode.Forbidden)
+								{
+									_log.Log("1", $"403 Forbidden: Access to {url} is denied.");
+									break;
+								}
+
+								response.EnsureSuccessStatusCode();
+								string pageContent = await response.Content.ReadAsStringAsync();
+
+								HtmlDocument document = new HtmlDocument();
+								document.LoadHtml(pageContent);
+
+								var scriptNode = document.DocumentNode.SelectSingleNode("//script[@id='__NEXT_DATA__']");
+
+								if (scriptNode != null)
+								{
+									var json = scriptNode.InnerText;
+									var jsonObject = JObject.Parse(json);
+
+									var productsArray = jsonObject["props"]["pageProps"]["productsByCategoryOutput"]["children"] as JArray;
+									if (productsArray == null || productsArray.Count == 0)
+									{
+										break;
+									}
+
+									var allProducts = new JArray();
+									foreach (var child in productsArray)
+									{
+										var products = child["products"] as JArray;
+										allProducts.Merge(products);
+									}
+
+									foreach (var product in allProducts)
+									{
+										try
+										{
+											var attributes = product["attributes"];
+											string productName = attributes["name"].ToString();
+											string discountedPrice = product["price"]["discountedStr"].ToString().Replace("₺", "");
+											string normalPrice = product["price"]["normalStr"].ToString().Replace("₺", "");
+											var imageArray = product["images"] as JArray;
+											string imageURL = GetImageURL(imageArray);
+
+											All_Products a101Product = new All_Products
+											{
+												UrunAdi = productName,
+												Fiyat = discountedPrice,
+												EskiFiyat = normalPrice,
+												UrunResmi = imageURL,
+												MarketAdi = "A-101",
+												MarketResmi = "/img/A101.png"
+											};
+											allProductsA101.Add(a101Product);
+										}
+										catch (Exception ex)
+										{
+											_log.Log("1", $"Error processing product: {ex.Message}");
+										}
+									}
+								}
+							}
+							catch (HttpRequestException ex)
+							{
+								_log.Log("1", $"HTTP request error: {ex.Message}");
+							}
+							catch (Exception ex)
+							{
+								_log.Log("6", $"General error: {ex.Message}");
+							}
+
+							// İstekler arasında rastgele gecikme ekleyerek bot benzeri davranışı azaltın
+							Random rnd = new Random();
+							Thread.Sleep(rnd.Next(1000, 5000));
+						}
+					}
 				}
 			}
-			catch (Exception e)
-			{
-				_log.Log("1", e.Message);
-				Console.WriteLine(e.Message);
-				return null;
-			}
+
+			return allProductsA101;
 		}
 
 		private string GetImageURL(JArray images)
@@ -345,16 +342,18 @@ namespace AkilliFiyatWeb.Services
 		{
 			var userAgents = new[]
 			{
-			"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36",
-			"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0",
-			"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36",
-			"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:89.0) Gecko/20100101 Firefox/89.0",
-			"Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1"
-		};
+		"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36",
+		"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0",
+		"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36",
+		"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:89.0) Gecko/20100101 Firefox/89.0",
+		"Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1"
+	};
 
 			Random rnd = new Random();
 			return userAgents[rnd.Next(userAgents.Length)];
 		}
+
+
 
 
 
