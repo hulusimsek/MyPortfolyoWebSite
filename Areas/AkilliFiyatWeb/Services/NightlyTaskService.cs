@@ -5,6 +5,7 @@ using AkilliFiyatWeb.Data;
 using AkilliFiyatWeb.Entity;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MyPortfolyoWebSite.Areas.AkilliFiyatWeb.Services;
 
 namespace AkilliFiyatWeb.Services
 {
@@ -41,6 +42,7 @@ namespace AkilliFiyatWeb.Services
                     var bimServisi = kapsam.ServiceProvider.GetRequiredService<BimIndirimUrunServices>();
                     var a101Servisi = kapsam.ServiceProvider.GetRequiredService<A101IndirimUrunServices>();
                     var sokUrunServisi = kapsam.ServiceProvider.GetRequiredService<SokUrunServices>();
+                    var luceneIndexer = kapsam.ServiceProvider.GetRequiredService<LuceneIndexer>();
 
 					var _log = kapsam.ServiceProvider.GetRequiredService<MyLogger>();
 
@@ -75,6 +77,10 @@ namespace AkilliFiyatWeb.Services
 
 						await veritabaniBaglantisi.All_Products.AddRangeAsync(tumMarketler);
 						await veritabaniBaglantisi.SaveChangesAsync();
+
+
+						var products = luceneIndexer.GetProductsFromDatabase(); // Veritabanından ürünleri alın
+						luceneIndexer.CreateIndex(products);
 
 						Console.WriteLine("GeceLikGorevServisi: Görevler başarıyla tamamlandı.");
                         _log.Log("1", "gece gorevi", "GeceLikGorevServisi: Görevler başarıyla tamamlandı");

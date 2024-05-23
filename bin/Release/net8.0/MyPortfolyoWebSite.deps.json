@@ -9,6 +9,12 @@
       "MyPortfolyoWebSite/1.0.0": {
         "dependencies": {
           "HtmlAgilityPack": "1.11.60",
+          "Lucene.Net": "4.8.0-beta00016",
+          "Lucene.Net.Analysis.Common": "4.8.0-beta00016",
+          "Lucene.Net.Contrib": "3.0.3",
+          "Lucene.Net.Contrib.Spatial": "3.0.3",
+          "Lucene.Net.Queries": "4.8.0-beta00016",
+          "Lucene.Net.QueryParser": "4.8.0-beta00016",
           "Microsoft.ApplicationInsights.AspNetCore": "2.21.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.3",
           "Microsoft.EntityFrameworkCore.Design": "8.0.3",
@@ -568,6 +574,131 @@
         "resources": {
           "lib/net6.0/zh-Hant/Humanizer.resources.dll": {
             "locale": "zh-Hant"
+          }
+        }
+      },
+      "J2N/2.0.0": {
+        "runtime": {
+          "lib/net6.0/J2N.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        }
+      },
+      "Lucene.Net/4.8.0-beta00016": {
+        "dependencies": {
+          "J2N": "2.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "8.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/Lucene.Net.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.8.0.0"
+          }
+        }
+      },
+      "Lucene.Net.Analysis.Common/4.8.0-beta00016": {
+        "dependencies": {
+          "Lucene.Net": "4.8.0-beta00016"
+        },
+        "runtime": {
+          "lib/net6.0/Lucene.Net.Analysis.Common.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.8.0.0"
+          }
+        }
+      },
+      "Lucene.Net.Contrib/3.0.3": {
+        "dependencies": {
+          "Lucene.Net": "4.8.0-beta00016"
+        },
+        "runtime": {
+          "lib/net40/Lucene.Net.Contrib.Analyzers.dll": {
+            "assemblyVersion": "3.0.3.0",
+            "fileVersion": "3.0.3.0"
+          },
+          "lib/net40/Lucene.Net.Contrib.Core.dll": {
+            "assemblyVersion": "3.0.3.0",
+            "fileVersion": "3.0.3.0"
+          },
+          "lib/net40/Lucene.Net.Contrib.FastVectorHighlighter.dll": {
+            "assemblyVersion": "3.0.3.0",
+            "fileVersion": "3.0.3.0"
+          },
+          "lib/net40/Lucene.Net.Contrib.Highlighter.dll": {
+            "assemblyVersion": "2.3.2.1",
+            "fileVersion": "2.3.2.1"
+          },
+          "lib/net40/Lucene.Net.Contrib.Memory.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          },
+          "lib/net40/Lucene.Net.Contrib.Queries.dll": {
+            "assemblyVersion": "3.0.3.0",
+            "fileVersion": "3.0.3.0"
+          },
+          "lib/net40/Lucene.Net.Contrib.Regex.dll": {
+            "assemblyVersion": "3.0.3.0",
+            "fileVersion": "3.0.3.0"
+          },
+          "lib/net40/Lucene.Net.Contrib.SimpleFacetedSearch.dll": {
+            "assemblyVersion": "3.0.3.0",
+            "fileVersion": "3.0.3.0"
+          },
+          "lib/net40/Lucene.Net.Contrib.Snowball.dll": {
+            "assemblyVersion": "2.0.0.1",
+            "fileVersion": "2.0.0.1"
+          },
+          "lib/net40/Lucene.Net.Contrib.SpellChecker.dll": {
+            "assemblyVersion": "3.0.3.0",
+            "fileVersion": "3.0.3.0"
+          }
+        }
+      },
+      "Lucene.Net.Contrib.Spatial/3.0.3": {
+        "dependencies": {
+          "Lucene.Net": "4.8.0-beta00016",
+          "Spatial4n.Core": "0.3.0"
+        },
+        "runtime": {
+          "lib/net40/Lucene.Net.Contrib.Spatial.dll": {
+            "assemblyVersion": "3.0.3.0",
+            "fileVersion": "3.0.3.0"
+          }
+        }
+      },
+      "Lucene.Net.Queries/4.8.0-beta00016": {
+        "dependencies": {
+          "Lucene.Net": "4.8.0-beta00016"
+        },
+        "runtime": {
+          "lib/net6.0/Lucene.Net.Queries.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.8.0.0"
+          }
+        }
+      },
+      "Lucene.Net.QueryParser/4.8.0-beta00016": {
+        "dependencies": {
+          "Lucene.Net.Analysis.Common": "4.8.0-beta00016",
+          "Lucene.Net.Queries": "4.8.0-beta00016",
+          "Lucene.Net.Sandbox": "4.8.0-beta00016"
+        },
+        "runtime": {
+          "lib/net6.0/Lucene.Net.QueryParser.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.8.0.0"
+          }
+        }
+      },
+      "Lucene.Net.Sandbox/4.8.0-beta00016": {
+        "dependencies": {
+          "Lucene.Net": "4.8.0-beta00016"
+        },
+        "runtime": {
+          "lib/net6.0/Lucene.Net.Sandbox.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.8.0.0"
           }
         }
       },
@@ -1731,6 +1862,14 @@
           }
         }
       },
+      "Spatial4n.Core/0.3.0": {
+        "runtime": {
+          "lib/net40/Spatial4n.Core.dll": {
+            "assemblyVersion": "0.3.0.0",
+            "fileVersion": "0.3.0.0"
+          }
+        }
+      },
       "System.Buffers/4.5.0": {},
       "System.CodeDom/5.0.0": {
         "runtime": {
@@ -2314,6 +2453,62 @@
       "sha512": "sha512-VIXB7HCUC34OoaGnO3HJVtSv2/wljPhjV7eKH4+TFPgQdJj2lvHNKY41Dtg0Bphu7X5UaXFR4zrYYyo+GNOjbA==",
       "path": "humanizer.core.zh-hant/2.14.1",
       "hashPath": "humanizer.core.zh-hant.2.14.1.nupkg.sha512"
+    },
+    "J2N/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-M5bwDajAARZiyqupU+rHQJnsVLxNBOHJ8vKYHd8LcLIb1FgLfzzcJvc31Qo5Xz/GEHFjDF9ScjKL/ks/zRTXuA==",
+      "path": "j2n/2.0.0",
+      "hashPath": "j2n.2.0.0.nupkg.sha512"
+    },
+    "Lucene.Net/4.8.0-beta00016": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-DCtUbE/NIrisNI7hRwU+UKS3Cr6S2vH1XB9wvEHHI3anu5OUpX1Fkr/PDC7oFCaol/QCvzVLbLZVizAT1aTLpA==",
+      "path": "lucene.net/4.8.0-beta00016",
+      "hashPath": "lucene.net.4.8.0-beta00016.nupkg.sha512"
+    },
+    "Lucene.Net.Analysis.Common/4.8.0-beta00016": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7pjEAIliWdih6E3I0hCE8hKcKKRx1LLzeQBslF1fhvzE1Sal4NyHd8RFJHV1Z+yHlBw4gCyyVIDZADiIoyqwxg==",
+      "path": "lucene.net.analysis.common/4.8.0-beta00016",
+      "hashPath": "lucene.net.analysis.common.4.8.0-beta00016.nupkg.sha512"
+    },
+    "Lucene.Net.Contrib/3.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-4aFMsm5657tIIAXWOh3wYxSfPwWFDjrUomXnE3lxKPOuJDjmvLg3CEuTaPYuLvBMKwRaj/C4EwyPM5/pmIwytw==",
+      "path": "lucene.net.contrib/3.0.3",
+      "hashPath": "lucene.net.contrib.3.0.3.nupkg.sha512"
+    },
+    "Lucene.Net.Contrib.Spatial/3.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Ju/K7Khx6fM9ZcW7er7zI8t6EXLYy21SruyEYoux705MD+lFLLDhH95II1Mz3+MQnV7oMwZCJsNkyj+K7ZEU5Q==",
+      "path": "lucene.net.contrib.spatial/3.0.3",
+      "hashPath": "lucene.net.contrib.spatial.3.0.3.nupkg.sha512"
+    },
+    "Lucene.Net.Queries/4.8.0-beta00016": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XBzdMDlan68V2ZlhAlP8Fd+Xx2Le8ec7cEN1kFF45Sipa3Q8L/tilJfwS9VHvMTvGkwPM/yj62eGbfGBgIMR8Q==",
+      "path": "lucene.net.queries/4.8.0-beta00016",
+      "hashPath": "lucene.net.queries.4.8.0-beta00016.nupkg.sha512"
+    },
+    "Lucene.Net.QueryParser/4.8.0-beta00016": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5dVvjXmzPaK8GD/eblJopTJMQmO6c6fvVPfBIOw46+jyZR+yESkUnWF1LtLoLXZQNrl4Dx8LKdes5G1QAM7eGA==",
+      "path": "lucene.net.queryparser/4.8.0-beta00016",
+      "hashPath": "lucene.net.queryparser.4.8.0-beta00016.nupkg.sha512"
+    },
+    "Lucene.Net.Sandbox/4.8.0-beta00016": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wMsRZtbNx0wvX3mtNjpOwQmKx3Ij4UGHWIYHbvnzMWlPUTgtOpYSj02REL4hOxI71WBZylpGB5EWfQ2eEld63g==",
+      "path": "lucene.net.sandbox/4.8.0-beta00016",
+      "hashPath": "lucene.net.sandbox.4.8.0-beta00016.nupkg.sha512"
     },
     "Microsoft.ApplicationInsights/2.21.0": {
       "type": "package",
@@ -2944,6 +3139,13 @@
       "sha512": "sha512-3xIx4CJunIoLEOROfDKILIzf76WfphTpQJYE98stG1GBVBKhFO5E6wXNfCqdiWt34iNlckcDr3z+qCD+RPfuUQ==",
       "path": "selenium.webdriver/4.21.0",
       "hashPath": "selenium.webdriver.4.21.0.nupkg.sha512"
+    },
+    "Spatial4n.Core/0.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qDKhFh3nWLgSmX1MKMJh/MPXWHMy0SXuGMFovzK9AjQcTUetZOmNy3oGY2UVOEalw7yY9M8bm5eTThaScRcA/g==",
+      "path": "spatial4n.core/0.3.0",
+      "hashPath": "spatial4n.core.0.3.0.nupkg.sha512"
     },
     "System.Buffers/4.5.0": {
       "type": "package",

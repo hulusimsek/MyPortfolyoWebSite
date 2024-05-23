@@ -4,8 +4,10 @@ using AkilliFiyatWeb.Models;
 using AkilliFiyatWeb.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using MyPortfolyoWebSite.Areas.AkilliFiyatWeb.Services;
 using MyPortfolyoWebSite.Entity;
 using MyPortfolyoWebSite.Models;
+using System.Configuration;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,6 +21,10 @@ builder.Services.AddScoped<IEmailSender, SmtpEmailSender>(i =>
 );
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+
+
+builder.Services.AddScoped<LuceneIndexer>();
 
 
 builder.Services.AddDbContext<MyPortfolyoWebSite.Models.IdentityContext>(options =>

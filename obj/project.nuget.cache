@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "4ctEN7AeYUMoH4ROweDPvNTevAIGWtNYCD7EspVcNI59YON2d7Ix+MqWTC8+CUoh0MkKB19goS5kGmOMsmx5mg==",
+  "dgSpecHash": "q/Vm88OAeeu4apMggDMFk4m72Goyu8qGiJqql5keaZKOGr/SeyQoSwNp06Kn6Vq2LFIfDrCUHsREvMHueYXdAw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Hulusi\\Desktop\\hulusimsek.com\\MyPortfolyoWebSite.csproj",
   "expectedPackageFiles": [
@@ -55,6 +55,14 @@
     "C:\\Users\\Hulusi\\.nuget\\packages\\humanizer.core.zh-cn\\2.14.1\\humanizer.core.zh-cn.2.14.1.nupkg.sha512",
     "C:\\Users\\Hulusi\\.nuget\\packages\\humanizer.core.zh-hans\\2.14.1\\humanizer.core.zh-hans.2.14.1.nupkg.sha512",
     "C:\\Users\\Hulusi\\.nuget\\packages\\humanizer.core.zh-hant\\2.14.1\\humanizer.core.zh-hant.2.14.1.nupkg.sha512",
+    "C:\\Users\\Hulusi\\.nuget\\packages\\j2n\\2.0.0\\j2n.2.0.0.nupkg.sha512",
+    "C:\\Users\\Hulusi\\.nuget\\packages\\lucene.net\\4.8.0-beta00016\\lucene.net.4.8.0-beta00016.nupkg.sha512",
+    "C:\\Users\\Hulusi\\.nuget\\packages\\lucene.net.analysis.common\\4.8.0-beta00016\\lucene.net.analysis.common.4.8.0-beta00016.nupkg.sha512",
+    "C:\\Users\\Hulusi\\.nuget\\packages\\lucene.net.contrib\\3.0.3\\lucene.net.contrib.3.0.3.nupkg.sha512",
+    "C:\\Users\\Hulusi\\.nuget\\packages\\lucene.net.contrib.spatial\\3.0.3\\lucene.net.contrib.spatial.3.0.3.nupkg.sha512",
+    "C:\\Users\\Hulusi\\.nuget\\packages\\lucene.net.queries\\4.8.0-beta00016\\lucene.net.queries.4.8.0-beta00016.nupkg.sha512",
+    "C:\\Users\\Hulusi\\.nuget\\packages\\lucene.net.queryparser\\4.8.0-beta00016\\lucene.net.queryparser.4.8.0-beta00016.nupkg.sha512",
+    "C:\\Users\\Hulusi\\.nuget\\packages\\lucene.net.sandbox\\4.8.0-beta00016\\lucene.net.sandbox.4.8.0-beta00016.nupkg.sha512",
     "C:\\Users\\Hulusi\\.nuget\\packages\\microsoft.applicationinsights\\2.21.0\\microsoft.applicationinsights.2.21.0.nupkg.sha512",
     "C:\\Users\\Hulusi\\.nuget\\packages\\microsoft.applicationinsights.aspnetcore\\2.21.0\\microsoft.applicationinsights.aspnetcore.2.21.0.nupkg.sha512",
     "C:\\Users\\Hulusi\\.nuget\\packages\\microsoft.applicationinsights.dependencycollector\\2.21.0\\microsoft.applicationinsights.dependencycollector.2.21.0.nupkg.sha512",
@@ -145,6 +153,7 @@
     "C:\\Users\\Hulusi\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\8.0.2\\pomelo.entityframeworkcore.mysql.8.0.2.nupkg.sha512",
     "C:\\Users\\Hulusi\\.nuget\\packages\\selenium.chrome.webdriver\\85.0.0\\selenium.chrome.webdriver.85.0.0.nupkg.sha512",
     "C:\\Users\\Hulusi\\.nuget\\packages\\selenium.webdriver\\4.21.0\\selenium.webdriver.4.21.0.nupkg.sha512",
+    "C:\\Users\\Hulusi\\.nuget\\packages\\spatial4n.core\\0.3.0\\spatial4n.core.0.3.0.nupkg.sha512",
     "C:\\Users\\Hulusi\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
     "C:\\Users\\Hulusi\\.nuget\\packages\\system.codedom\\5.0.0\\system.codedom.5.0.0.nupkg.sha512",
     "C:\\Users\\Hulusi\\.nuget\\packages\\system.collections.immutable\\7.0.0\\system.collections.immutable.7.0.0.nupkg.sha512",
@@ -192,8 +201,38 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
+      "message": "'Lucene.Net.Contrib 3.0.3' paketi, proje hedef çerçevesi 'net8.0' yerine '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' kullanılarak geri yüklendi. Bu paket projenizle tamamen uyumlu olmayabilir.",
+      "libraryId": "Lucene.Net.Contrib",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'Lucene.Net.Contrib.Spatial 3.0.3' paketi, proje hedef çerçevesi 'net8.0' yerine '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' kullanılarak geri yüklendi. Bu paket projenizle tamamen uyumlu olmayabilir.",
+      "libraryId": "Lucene.Net.Contrib.Spatial",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
       "message": "'OpenQA.Selenium.Winium 1.0.0.4' paketi, proje hedef çerçevesi 'net8.0' yerine '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' kullanılarak geri yüklendi. Bu paket projenizle tamamen uyumlu olmayabilir.",
       "libraryId": "OpenQA.Selenium.Winium",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'Spatial4n.Core 0.3.0' paketi, proje hedef çerçevesi 'net8.0' yerine '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' kullanılarak geri yüklendi. Bu paket projenizle tamamen uyumlu olmayabilir.",
+      "libraryId": "Spatial4n.Core",
       "targetGraphs": [
         "net8.0"
       ]

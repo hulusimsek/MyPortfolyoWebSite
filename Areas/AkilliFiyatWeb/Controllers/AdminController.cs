@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using MyPortfolyoWebSite.Areas.AkilliFiyatWeb.Services;
 
 namespace AkilliFiyatWeb.Controllers
 {
@@ -34,6 +35,7 @@ namespace AkilliFiyatWeb.Controllers
 				var bimServisi = kapsam.ServiceProvider.GetRequiredService<BimIndirimUrunServices>();
 				var a101Servisi = kapsam.ServiceProvider.GetRequiredService<A101IndirimUrunServices>();
 				var sokUrunServisi = kapsam.ServiceProvider.GetRequiredService<SokUrunServices>();
+				var luceneIndexer = kapsam.ServiceProvider.GetRequiredService<LuceneIndexer>();
 				var _log = kapsam.ServiceProvider.GetRequiredService<MyLogger>();
 
 				try
@@ -83,5 +85,24 @@ namespace AkilliFiyatWeb.Controllers
 			}
 		}
 
+		public async void CreateIndex()
+		{
+			using (var kapsam = _serviceProvider.CreateScope())
+			{
+				var luceneIndexer = kapsam.ServiceProvider.GetRequiredService<LuceneIndexer>();
+				var _log = kapsam.ServiceProvider.GetRequiredService<MyLogger>();
+				try
+				{
+					var products = luceneIndexer.GetProductsFromDatabase(); // Veritabanından ürünleri alın
+					luceneIndexer.CreateIndex(products);
+					_log.Log("1", "Indexleme tamamlandı");
+				}
+				catch (Exception ex)
+				{
+					Console.WriteLine("Index: Hata oluştu: " + ex.Message);
+					_log.Log("1", ex.Message, ex.ToString());
+				}
+			}
+		}
 	}
 }

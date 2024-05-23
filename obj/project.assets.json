@@ -609,6 +609,189 @@
           }
         }
       },
+      "J2N/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/J2N.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/J2N.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Lucene.Net/4.8.0-beta00016": {
+        "type": "package",
+        "dependencies": {
+          "J2N": "2.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "2.0.0"
+        },
+        "compile": {
+          "lib/net6.0/Lucene.Net.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Lucene.Net.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Lucene.Net.Analysis.Common/4.8.0-beta00016": {
+        "type": "package",
+        "dependencies": {
+          "Lucene.Net": "4.8.0-beta00016"
+        },
+        "compile": {
+          "lib/net6.0/Lucene.Net.Analysis.Common.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Lucene.Net.Analysis.Common.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Lucene.Net.Contrib/3.0.3": {
+        "type": "package",
+        "dependencies": {
+          "Lucene.Net": "3.0.3"
+        },
+        "compile": {
+          "lib/net40/Lucene.Net.Contrib.Analyzers.dll": {
+            "related": ".pdb;.XML"
+          },
+          "lib/net40/Lucene.Net.Contrib.Core.dll": {
+            "related": ".pdb;.XML"
+          },
+          "lib/net40/Lucene.Net.Contrib.FastVectorHighlighter.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net40/Lucene.Net.Contrib.Highlighter.dll": {
+            "related": ".pdb;.XML"
+          },
+          "lib/net40/Lucene.Net.Contrib.Memory.dll": {
+            "related": ".pdb;.XML"
+          },
+          "lib/net40/Lucene.Net.Contrib.Queries.dll": {
+            "related": ".pdb;.XML"
+          },
+          "lib/net40/Lucene.Net.Contrib.Regex.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net40/Lucene.Net.Contrib.SimpleFacetedSearch.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net40/Lucene.Net.Contrib.Snowball.dll": {
+            "related": ".pdb;.XML"
+          },
+          "lib/net40/Lucene.Net.Contrib.SpellChecker.dll": {
+            "related": ".pdb;.XML"
+          }
+        },
+        "runtime": {
+          "lib/net40/Lucene.Net.Contrib.Analyzers.dll": {
+            "related": ".pdb;.XML"
+          },
+          "lib/net40/Lucene.Net.Contrib.Core.dll": {
+            "related": ".pdb;.XML"
+          },
+          "lib/net40/Lucene.Net.Contrib.FastVectorHighlighter.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net40/Lucene.Net.Contrib.Highlighter.dll": {
+            "related": ".pdb;.XML"
+          },
+          "lib/net40/Lucene.Net.Contrib.Memory.dll": {
+            "related": ".pdb;.XML"
+          },
+          "lib/net40/Lucene.Net.Contrib.Queries.dll": {
+            "related": ".pdb;.XML"
+          },
+          "lib/net40/Lucene.Net.Contrib.Regex.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net40/Lucene.Net.Contrib.SimpleFacetedSearch.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net40/Lucene.Net.Contrib.Snowball.dll": {
+            "related": ".pdb;.XML"
+          },
+          "lib/net40/Lucene.Net.Contrib.SpellChecker.dll": {
+            "related": ".pdb;.XML"
+          }
+        }
+      },
+      "Lucene.Net.Contrib.Spatial/3.0.3": {
+        "type": "package",
+        "dependencies": {
+          "Lucene.Net": "3.0.3",
+          "Spatial4n.Core": "0.3.0"
+        },
+        "compile": {
+          "lib/net40/Lucene.Net.Contrib.Spatial.dll": {
+            "related": ".pdb;.XML"
+          }
+        },
+        "runtime": {
+          "lib/net40/Lucene.Net.Contrib.Spatial.dll": {
+            "related": ".pdb;.XML"
+          }
+        }
+      },
+      "Lucene.Net.Queries/4.8.0-beta00016": {
+        "type": "package",
+        "dependencies": {
+          "Lucene.Net": "4.8.0-beta00016"
+        },
+        "compile": {
+          "lib/net6.0/Lucene.Net.Queries.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Lucene.Net.Queries.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Lucene.Net.QueryParser/4.8.0-beta00016": {
+        "type": "package",
+        "dependencies": {
+          "Lucene.Net.Analysis.Common": "4.8.0-beta00016",
+          "Lucene.Net.Queries": "4.8.0-beta00016",
+          "Lucene.Net.Sandbox": "4.8.0-beta00016"
+        },
+        "compile": {
+          "lib/net6.0/Lucene.Net.QueryParser.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Lucene.Net.QueryParser.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Lucene.Net.Sandbox/4.8.0-beta00016": {
+        "type": "package",
+        "dependencies": {
+          "Lucene.Net": "4.8.0-beta00016"
+        },
+        "compile": {
+          "lib/net6.0/Lucene.Net.Sandbox.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Lucene.Net.Sandbox.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.ApplicationInsights/2.21.0": {
         "type": "package",
         "dependencies": {
@@ -2398,6 +2581,19 @@
           "buildTransitive/Selenium.WebDriver.targets": {}
         }
       },
+      "Spatial4n.Core/0.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Spatial4n.Core.dll": {
+            "related": ".pdb;.XML"
+          }
+        },
+        "runtime": {
+          "lib/net40/Spatial4n.Core.dll": {
+            "related": ".pdb;.XML"
+          }
+        }
+      },
       "System.Buffers/4.5.0": {
         "type": "package",
         "compile": {
@@ -3777,6 +3973,237 @@
         "lib/netstandard1.0/zh-Hant/Humanizer.resources.dll",
         "lib/netstandard2.0/zh-Hant/Humanizer.resources.dll",
         "logo.png"
+      ]
+    },
+    "J2N/2.0.0": {
+      "sha512": "M5bwDajAARZiyqupU+rHQJnsVLxNBOHJ8vKYHd8LcLIb1FgLfzzcJvc31Qo5Xz/GEHFjDF9ScjKL/ks/zRTXuA==",
+      "type": "package",
+      "path": "j2n/2.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "j2n-icon-100x100.png",
+        "j2n.2.0.0.nupkg.sha512",
+        "j2n.nuspec",
+        "lib/net40/J2N.dll",
+        "lib/net40/J2N.xml",
+        "lib/net45/J2N.dll",
+        "lib/net45/J2N.xml",
+        "lib/net5.0/J2N.dll",
+        "lib/net5.0/J2N.xml",
+        "lib/net6.0/J2N.dll",
+        "lib/net6.0/J2N.xml",
+        "lib/netcoreapp3.0/J2N.dll",
+        "lib/netcoreapp3.0/J2N.xml",
+        "lib/netstandard2.0/J2N.dll",
+        "lib/netstandard2.0/J2N.xml",
+        "lib/netstandard2.1/J2N.dll",
+        "lib/netstandard2.1/J2N.xml",
+        "readme.md"
+      ]
+    },
+    "Lucene.Net/4.8.0-beta00016": {
+      "sha512": "DCtUbE/NIrisNI7hRwU+UKS3Cr6S2vH1XB9wvEHHI3anu5OUpX1Fkr/PDC7oFCaol/QCvzVLbLZVizAT1aTLpA==",
+      "type": "package",
+      "path": "lucene.net/4.8.0-beta00016",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "NOTICE.txt",
+        "analyzers/dotnet/cs/Lucene.Net.CodeAnalysis.CSharp.dll",
+        "analyzers/dotnet/vb/Lucene.Net.CodeAnalysis.VisualBasic.dll",
+        "lib/net45/Lucene.Net.dll",
+        "lib/net45/Lucene.Net.xml",
+        "lib/net6.0/Lucene.Net.dll",
+        "lib/net6.0/Lucene.Net.xml",
+        "lib/netstandard2.0/Lucene.Net.dll",
+        "lib/netstandard2.0/Lucene.Net.xml",
+        "lib/netstandard2.1/Lucene.Net.dll",
+        "lib/netstandard2.1/Lucene.Net.xml",
+        "lucene-net-icon-128x128.png",
+        "lucene.net.4.8.0-beta00016.nupkg.sha512",
+        "lucene.net.nuspec",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
+      ]
+    },
+    "Lucene.Net.Analysis.Common/4.8.0-beta00016": {
+      "sha512": "7pjEAIliWdih6E3I0hCE8hKcKKRx1LLzeQBslF1fhvzE1Sal4NyHd8RFJHV1Z+yHlBw4gCyyVIDZADiIoyqwxg==",
+      "type": "package",
+      "path": "lucene.net.analysis.common/4.8.0-beta00016",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "NOTICE.txt",
+        "lib/net45/Lucene.Net.Analysis.Common.dll",
+        "lib/net45/Lucene.Net.Analysis.Common.xml",
+        "lib/net6.0/Lucene.Net.Analysis.Common.dll",
+        "lib/net6.0/Lucene.Net.Analysis.Common.xml",
+        "lib/netstandard2.0/Lucene.Net.Analysis.Common.dll",
+        "lib/netstandard2.0/Lucene.Net.Analysis.Common.xml",
+        "lib/netstandard2.1/Lucene.Net.Analysis.Common.dll",
+        "lib/netstandard2.1/Lucene.Net.Analysis.Common.xml",
+        "lucene-net-icon-128x128.png",
+        "lucene.net.analysis.common.4.8.0-beta00016.nupkg.sha512",
+        "lucene.net.analysis.common.nuspec"
+      ]
+    },
+    "Lucene.Net.Contrib/3.0.3": {
+      "sha512": "4aFMsm5657tIIAXWOh3wYxSfPwWFDjrUomXnE3lxKPOuJDjmvLg3CEuTaPYuLvBMKwRaj/C4EwyPM5/pmIwytw==",
+      "type": "package",
+      "path": "lucene.net.contrib/3.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net35/Lucene.Net.Contrib.Analyzers.XML",
+        "lib/net35/Lucene.Net.Contrib.Analyzers.dll",
+        "lib/net35/Lucene.Net.Contrib.Analyzers.pdb",
+        "lib/net35/Lucene.Net.Contrib.Core.XML",
+        "lib/net35/Lucene.Net.Contrib.Core.dll",
+        "lib/net35/Lucene.Net.Contrib.Core.pdb",
+        "lib/net35/Lucene.Net.Contrib.FastVectorHighlighter.dll",
+        "lib/net35/Lucene.Net.Contrib.FastVectorHighlighter.pdb",
+        "lib/net35/Lucene.Net.Contrib.FastVectorHighlighter.xml",
+        "lib/net35/Lucene.Net.Contrib.Highlighter.XML",
+        "lib/net35/Lucene.Net.Contrib.Highlighter.dll",
+        "lib/net35/Lucene.Net.Contrib.Highlighter.pdb",
+        "lib/net35/Lucene.Net.Contrib.Memory.XML",
+        "lib/net35/Lucene.Net.Contrib.Memory.dll",
+        "lib/net35/Lucene.Net.Contrib.Memory.pdb",
+        "lib/net35/Lucene.Net.Contrib.Queries.XML",
+        "lib/net35/Lucene.Net.Contrib.Queries.dll",
+        "lib/net35/Lucene.Net.Contrib.Queries.pdb",
+        "lib/net35/Lucene.Net.Contrib.Regex.dll",
+        "lib/net35/Lucene.Net.Contrib.Regex.pdb",
+        "lib/net35/Lucene.Net.Contrib.Regex.xml",
+        "lib/net35/Lucene.Net.Contrib.SimpleFacetedSearch.dll",
+        "lib/net35/Lucene.Net.Contrib.SimpleFacetedSearch.pdb",
+        "lib/net35/Lucene.Net.Contrib.SimpleFacetedSearch.xml",
+        "lib/net35/Lucene.Net.Contrib.Snowball.XML",
+        "lib/net35/Lucene.Net.Contrib.Snowball.dll",
+        "lib/net35/Lucene.Net.Contrib.Snowball.pdb",
+        "lib/net35/Lucene.Net.Contrib.SpellChecker.XML",
+        "lib/net35/Lucene.Net.Contrib.SpellChecker.dll",
+        "lib/net35/Lucene.Net.Contrib.SpellChecker.pdb",
+        "lib/net40/Lucene.Net.Contrib.Analyzers.XML",
+        "lib/net40/Lucene.Net.Contrib.Analyzers.dll",
+        "lib/net40/Lucene.Net.Contrib.Analyzers.pdb",
+        "lib/net40/Lucene.Net.Contrib.Core.XML",
+        "lib/net40/Lucene.Net.Contrib.Core.dll",
+        "lib/net40/Lucene.Net.Contrib.Core.pdb",
+        "lib/net40/Lucene.Net.Contrib.FastVectorHighlighter.dll",
+        "lib/net40/Lucene.Net.Contrib.FastVectorHighlighter.pdb",
+        "lib/net40/Lucene.Net.Contrib.FastVectorHighlighter.xml",
+        "lib/net40/Lucene.Net.Contrib.Highlighter.XML",
+        "lib/net40/Lucene.Net.Contrib.Highlighter.dll",
+        "lib/net40/Lucene.Net.Contrib.Highlighter.pdb",
+        "lib/net40/Lucene.Net.Contrib.Memory.XML",
+        "lib/net40/Lucene.Net.Contrib.Memory.dll",
+        "lib/net40/Lucene.Net.Contrib.Memory.pdb",
+        "lib/net40/Lucene.Net.Contrib.Queries.XML",
+        "lib/net40/Lucene.Net.Contrib.Queries.dll",
+        "lib/net40/Lucene.Net.Contrib.Queries.pdb",
+        "lib/net40/Lucene.Net.Contrib.Regex.dll",
+        "lib/net40/Lucene.Net.Contrib.Regex.pdb",
+        "lib/net40/Lucene.Net.Contrib.Regex.xml",
+        "lib/net40/Lucene.Net.Contrib.SimpleFacetedSearch.dll",
+        "lib/net40/Lucene.Net.Contrib.SimpleFacetedSearch.pdb",
+        "lib/net40/Lucene.Net.Contrib.SimpleFacetedSearch.xml",
+        "lib/net40/Lucene.Net.Contrib.Snowball.XML",
+        "lib/net40/Lucene.Net.Contrib.Snowball.dll",
+        "lib/net40/Lucene.Net.Contrib.Snowball.pdb",
+        "lib/net40/Lucene.Net.Contrib.SpellChecker.XML",
+        "lib/net40/Lucene.Net.Contrib.SpellChecker.dll",
+        "lib/net40/Lucene.Net.Contrib.SpellChecker.pdb",
+        "lucene.net.contrib.3.0.3.nupkg.sha512",
+        "lucene.net.contrib.nuspec"
+      ]
+    },
+    "Lucene.Net.Contrib.Spatial/3.0.3": {
+      "sha512": "Ju/K7Khx6fM9ZcW7er7zI8t6EXLYy21SruyEYoux705MD+lFLLDhH95II1Mz3+MQnV7oMwZCJsNkyj+K7ZEU5Q==",
+      "type": "package",
+      "path": "lucene.net.contrib.spatial/3.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net35/Lucene.Net.Contrib.Spatial.XML",
+        "lib/net35/Lucene.Net.Contrib.Spatial.dll",
+        "lib/net35/Lucene.Net.Contrib.Spatial.pdb",
+        "lib/net40/Lucene.Net.Contrib.Spatial.XML",
+        "lib/net40/Lucene.Net.Contrib.Spatial.dll",
+        "lib/net40/Lucene.Net.Contrib.Spatial.pdb",
+        "lucene.net.contrib.spatial.3.0.3.nupkg.sha512",
+        "lucene.net.contrib.spatial.nuspec"
+      ]
+    },
+    "Lucene.Net.Queries/4.8.0-beta00016": {
+      "sha512": "XBzdMDlan68V2ZlhAlP8Fd+Xx2Le8ec7cEN1kFF45Sipa3Q8L/tilJfwS9VHvMTvGkwPM/yj62eGbfGBgIMR8Q==",
+      "type": "package",
+      "path": "lucene.net.queries/4.8.0-beta00016",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "NOTICE.txt",
+        "lib/net45/Lucene.Net.Queries.dll",
+        "lib/net45/Lucene.Net.Queries.xml",
+        "lib/net6.0/Lucene.Net.Queries.dll",
+        "lib/net6.0/Lucene.Net.Queries.xml",
+        "lib/netstandard2.0/Lucene.Net.Queries.dll",
+        "lib/netstandard2.0/Lucene.Net.Queries.xml",
+        "lib/netstandard2.1/Lucene.Net.Queries.dll",
+        "lib/netstandard2.1/Lucene.Net.Queries.xml",
+        "lucene-net-icon-128x128.png",
+        "lucene.net.queries.4.8.0-beta00016.nupkg.sha512",
+        "lucene.net.queries.nuspec"
+      ]
+    },
+    "Lucene.Net.QueryParser/4.8.0-beta00016": {
+      "sha512": "5dVvjXmzPaK8GD/eblJopTJMQmO6c6fvVPfBIOw46+jyZR+yESkUnWF1LtLoLXZQNrl4Dx8LKdes5G1QAM7eGA==",
+      "type": "package",
+      "path": "lucene.net.queryparser/4.8.0-beta00016",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "NOTICE.txt",
+        "lib/net45/Lucene.Net.QueryParser.dll",
+        "lib/net45/Lucene.Net.QueryParser.xml",
+        "lib/net6.0/Lucene.Net.QueryParser.dll",
+        "lib/net6.0/Lucene.Net.QueryParser.xml",
+        "lib/netstandard2.0/Lucene.Net.QueryParser.dll",
+        "lib/netstandard2.0/Lucene.Net.QueryParser.xml",
+        "lib/netstandard2.1/Lucene.Net.QueryParser.dll",
+        "lib/netstandard2.1/Lucene.Net.QueryParser.xml",
+        "lucene-net-icon-128x128.png",
+        "lucene.net.queryparser.4.8.0-beta00016.nupkg.sha512",
+        "lucene.net.queryparser.nuspec"
+      ]
+    },
+    "Lucene.Net.Sandbox/4.8.0-beta00016": {
+      "sha512": "wMsRZtbNx0wvX3mtNjpOwQmKx3Ij4UGHWIYHbvnzMWlPUTgtOpYSj02REL4hOxI71WBZylpGB5EWfQ2eEld63g==",
+      "type": "package",
+      "path": "lucene.net.sandbox/4.8.0-beta00016",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "NOTICE.txt",
+        "lib/net45/Lucene.Net.Sandbox.dll",
+        "lib/net45/Lucene.Net.Sandbox.xml",
+        "lib/net6.0/Lucene.Net.Sandbox.dll",
+        "lib/net6.0/Lucene.Net.Sandbox.xml",
+        "lib/netstandard2.0/Lucene.Net.Sandbox.dll",
+        "lib/netstandard2.0/Lucene.Net.Sandbox.xml",
+        "lib/netstandard2.1/Lucene.Net.Sandbox.dll",
+        "lib/netstandard2.1/Lucene.Net.Sandbox.xml",
+        "lucene-net-icon-128x128.png",
+        "lucene.net.sandbox.4.8.0-beta00016.nupkg.sha512",
+        "lucene.net.sandbox.nuspec"
       ]
     },
     "Microsoft.ApplicationInsights/2.21.0": {
@@ -6917,6 +7344,23 @@
         "selenium.webdriver.nuspec"
       ]
     },
+    "Spatial4n.Core/0.3.0": {
+      "sha512": "qDKhFh3nWLgSmX1MKMJh/MPXWHMy0SXuGMFovzK9AjQcTUetZOmNy3oGY2UVOEalw7yY9M8bm5eTThaScRcA/g==",
+      "type": "package",
+      "path": "spatial4n.core/0.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net20/Spatial4n.Core.XML",
+        "lib/net20/Spatial4n.Core.dll",
+        "lib/net20/Spatial4n.Core.pdb",
+        "lib/net40/Spatial4n.Core.XML",
+        "lib/net40/Spatial4n.Core.dll",
+        "lib/net40/Spatial4n.Core.pdb",
+        "spatial4n.core.0.3.0.nupkg.sha512",
+        "spatial4n.core.nuspec"
+      ]
+    },
     "System.Buffers/4.5.0": {
       "sha512": "pL2ChpaRRWI/p4LXyy4RgeWlYF2sgfj/pnVMvBqwNFr5cXg7CXNnWZWxrOONLg8VGdFB8oB+EG2Qw4MLgTOe+A==",
       "type": "package",
@@ -7907,6 +8351,12 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "HtmlAgilityPack >= 1.11.60",
+      "Lucene.Net >= 4.8.0-beta00016",
+      "Lucene.Net.Analysis.Common >= 4.8.0-beta00016",
+      "Lucene.Net.Contrib >= 3.0.3",
+      "Lucene.Net.Contrib.Spatial >= 3.0.3",
+      "Lucene.Net.Queries >= 4.8.0-beta00016",
+      "Lucene.Net.QueryParser >= 4.8.0-beta00016",
       "Microsoft.ApplicationInsights.AspNetCore >= 2.21.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 8.0.3",
       "Microsoft.EntityFrameworkCore.Design >= 8.0.3",
@@ -7965,6 +8415,30 @@
           "HtmlAgilityPack": {
             "target": "Package",
             "version": "[1.11.60, )"
+          },
+          "Lucene.Net": {
+            "target": "Package",
+            "version": "[4.8.0-beta00016, )"
+          },
+          "Lucene.Net.Analysis.Common": {
+            "target": "Package",
+            "version": "[4.8.0-beta00016, )"
+          },
+          "Lucene.Net.Contrib": {
+            "target": "Package",
+            "version": "[3.0.3, )"
+          },
+          "Lucene.Net.Contrib.Spatial": {
+            "target": "Package",
+            "version": "[3.0.3, )"
+          },
+          "Lucene.Net.Queries": {
+            "target": "Package",
+            "version": "[4.8.0-beta00016, )"
+          },
+          "Lucene.Net.QueryParser": {
+            "target": "Package",
+            "version": "[4.8.0-beta00016, )"
           },
           "Microsoft.ApplicationInsights.AspNetCore": {
             "target": "Package",
@@ -8043,8 +8517,38 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
+      "message": "'Lucene.Net.Contrib 3.0.3' paketi, proje hedef çerçevesi 'net8.0' yerine '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' kullanılarak geri yüklendi. Bu paket projenizle tamamen uyumlu olmayabilir.",
+      "libraryId": "Lucene.Net.Contrib",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'Lucene.Net.Contrib.Spatial 3.0.3' paketi, proje hedef çerçevesi 'net8.0' yerine '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' kullanılarak geri yüklendi. Bu paket projenizle tamamen uyumlu olmayabilir.",
+      "libraryId": "Lucene.Net.Contrib.Spatial",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
       "message": "'OpenQA.Selenium.Winium 1.0.0.4' paketi, proje hedef çerçevesi 'net8.0' yerine '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' kullanılarak geri yüklendi. Bu paket projenizle tamamen uyumlu olmayabilir.",
       "libraryId": "OpenQA.Selenium.Winium",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'Spatial4n.Core 0.3.0' paketi, proje hedef çerçevesi 'net8.0' yerine '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' kullanılarak geri yüklendi. Bu paket projenizle tamamen uyumlu olmayabilir.",
+      "libraryId": "Spatial4n.Core",
       "targetGraphs": [
         "net8.0"
       ]

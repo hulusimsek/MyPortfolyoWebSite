@@ -18,6 +18,12 @@
 
 	<ItemGroup>
 		<PackageReference Include="HtmlAgilityPack" Version="1.11.60" />
+		<PackageReference Include="Lucene.Net" Version="4.8.0-beta00016" />
+		<PackageReference Include="Lucene.Net.Analysis.Common" Version="4.8.0-beta00016" />
+		<PackageReference Include="Lucene.Net.Contrib" Version="3.0.3" />
+		<PackageReference Include="Lucene.Net.Contrib.Spatial" Version="3.0.3" />
+		<PackageReference Include="Lucene.Net.Queries" Version="4.8.0-beta00016" />
+		<PackageReference Include="Lucene.Net.QueryParser" Version="4.8.0-beta00016" />
 		<PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.21.0" />
 		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.3" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.3">
@@ -30,6 +36,9 @@
 		<PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="8.0.2" />
 		<PackageReference Include="Selenium.Chrome.WebDriver" Version="85.0.0" />
 		<PackageReference Include="Selenium.WebDriver" Version="4.21.0" />
+		
+
+
 	</ItemGroup>
 
 </Project>

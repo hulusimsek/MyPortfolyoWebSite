@@ -118,4 +118,23 @@ public class HomeController : Controller
         }
 
     }
+
+
+	[HttpGet("SearchProducts")]
+	public async Task<ActionResult<IEnumerable<All_Products>>> SearchProducts(string query)
+	{
+		if (string.IsNullOrEmpty(query))
+		{
+			return BadRequest("Query parameter is required.");
+		}
+
+		var products = await _context.All_Products
+			.Where(p => p.UrunAdi.Contains(query) || p.MarketAdi.Contains(query))
+			.ToListAsync();
+
+		// Ürün bulunamasa bile boş bir liste döndür
+		return products;
+	}
+
+
 }

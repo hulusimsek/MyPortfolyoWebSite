@@ -49,6 +49,30 @@
               "target": "Package",
               "version": "[1.11.60, )"
             },
+            "Lucene.Net": {
+              "target": "Package",
+              "version": "[4.8.0-beta00016, )"
+            },
+            "Lucene.Net.Analysis.Common": {
+              "target": "Package",
+              "version": "[4.8.0-beta00016, )"
+            },
+            "Lucene.Net.Contrib": {
+              "target": "Package",
+              "version": "[3.0.3, )"
+            },
+            "Lucene.Net.Contrib.Spatial": {
+              "target": "Package",
+              "version": "[3.0.3, )"
+            },
+            "Lucene.Net.Queries": {
+              "target": "Package",
+              "version": "[4.8.0-beta00016, )"
+            },
+            "Lucene.Net.QueryParser": {
+              "target": "Package",
+              "version": "[4.8.0-beta00016, )"
+            },
             "Microsoft.ApplicationInsights.AspNetCore": {
               "target": "Package",
               "version": "[2.21.0, )"
